@@ -38,24 +38,44 @@ export default async () => {
   if (!token || !db) return Response.json({ erro: 'Notion não configurado' }, { status: 503 });
 
   const trabalhos = [];
-  let cursor;
+  const corpo = (cursor) => JSON.stringify({
+    filter: { property: 'Publicado', checkbox: { equals: true } },
+    sorts: [{ property: 'Ordem', direction: 'ascending' }],
+    page_size: 100,
+    ...(cursor ? { start_cursor: cursor } : {}),
+  });
+  const pede = (url, versao, body) => fetch(url, {
+    method: body ? 'POST' : 'GET',
+    headers: { Authorization: `Bearer ${token}`, 'Notion-Version': versao, 'Content-Type': 'application/json' },
+    ...(body ? { body } : {}),
+  });
+  const detalhe = async (r) => { try { const j = await r.json(); return j.message || j.code || ''; } catch (e) { return ''; } };
+
   try {
-    do {
-      const r = await fetch(`https://api.notion.com/v1/databases/${db}/query`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${token}`, 'Notion-Version': VERSAO, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          filter: { property: 'Publicado', checkbox: { equals: true } },
-          sorts: [{ property: 'Ordem', direction: 'ascending' }],
-          page_size: 100,
-          ...(cursor ? { start_cursor: cursor } : {}),
-        }),
-      });
-      if (!r.ok) return Response.json({ erro: 'Notion respondeu ' + r.status }, { status: 502 });
-      const d = await r.json();
+    // 1ª tentativa: API clássica (consulta a base pelo id)
+    let r = await pede(`https://api.notion.com/v1/databases/${db}/query`, VERSAO, corpo());
+    let modo = 'classico', ds = null;
+    if (r.status === 404 || r.status === 400) {
+      // 2ª tentativa: API nova, em que a base tem "fontes de dados" (data sources)
+      const info = await pede(`https://api.notion.com/v1/databases/${db}`, '2025-09-03');
+      if (info.ok) {
+        const j = await info.json();
+        ds = j.data_sources && j.data_sources[0] && j.data_sources[0].id;
+      }
+      if (!ds) ds = db; // o id informado pode já ser o da fonte de dados
+      r = await pede(`https://api.notion.com/v1/data_sources/${ds}/query`, '2025-09-03', corpo());
+      modo = 'fonte';
+    }
+    if (!r.ok) return Response.json({ erro: 'Notion respondeu ' + r.status, detalhe: await detalhe(r) }, { status: 502 });
+    let d = await r.json();
+    d.results.forEach((pg) => trabalhos.push(linha(pg)));
+    while (d.has_more) {
+      const url = modo === 'classico' ? `https://api.notion.com/v1/databases/${db}/query` : `https://api.notion.com/v1/data_sources/${ds}/query`;
+      r = await pede(url, modo === 'classico' ? VERSAO : '2025-09-03', corpo(d.next_cursor));
+      if (!r.ok) break;
+      d = await r.json();
       d.results.forEach((pg) => trabalhos.push(linha(pg)));
-      cursor = d.has_more ? d.next_cursor : null;
-    } while (cursor);
+    }
   } catch (e) {
     return Response.json({ erro: 'Falha ao ler o Notion' }, { status: 502 });
   }
