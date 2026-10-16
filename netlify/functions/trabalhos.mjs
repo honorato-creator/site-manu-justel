@@ -33,8 +33,8 @@ function linha(pg) {
 }
 
 export default async () => {
-  const token = process.env.NOTION_TOKEN;
-  const db = (process.env.NOTION_DB || '').replace(/-/g, '');
+  const token = (process.env.NOTION_TOKEN || '').trim();
+  const db = (process.env.NOTION_DB || '').trim().replace(/-/g, '');
   if (!token || !db) return Response.json({ erro: 'Notion não configurado' }, { status: 503 });
 
   const trabalhos = [];
