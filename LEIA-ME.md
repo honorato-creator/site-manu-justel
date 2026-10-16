@@ -45,7 +45,7 @@ netlify deploy --prod --dir . --functions netlify/functions
 
 ## 3. Cartão-postal → e-mail da Manu (Netlify Forms)
 1. No Netlify: **Forms**. O formulário **contato** aparece sozinho depois do primeiro deploy. Se o Forms pedir, clique em **Enable form detection** e faça um novo deploy.
-2. Para receber por e-mail: **Forms → Form notifications → Add notification → Email notification**, com o e-mail contato.manuelajustel@gmail.com.
+2. Para receber por e-mail: **Forms → Form notifications → Add notification → Email notification**, com o e-mail manujustel@gmail.com.
 3. O assunto do e-mail já chega como "[Site] assunto | nome de quem enviou".
 4. Ficam de fora:
    - spam, por um campo escondido no formulário;
