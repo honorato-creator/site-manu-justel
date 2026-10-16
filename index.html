@@ -907,6 +907,11 @@ body.is-prop{background:#FFF6E4}
 .caso .v-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .caso .v-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(0,27,46,.35);color:#001B2E;text-decoration:none;font-family:var(--f-osd);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .caso .v-links a:hover{background:#001B2E;color:#F6EDD9}
+.caso .m-videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(14px,2vw,24px);align-items:start}
+.caso .vid{position:relative;margin:0;background:#FFFBF0;padding:8px;border-radius:2px;box-shadow:0 10px 22px rgba(60,40,10,.16)}
+.caso .vid video{display:block;width:100%;height:auto;max-height:78vh;background:#0b0907;border-radius:1px}
+.caso .vid-som{position:absolute;left:18px;bottom:18px;min-height:40px;padding:0 16px;border:0;border-radius:999px;background:rgba(0,27,46,.85);color:#F6EDD9;font-family:var(--f-osd);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.caso .vid-som:hover{background:#001B2E}
 
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
@@ -2141,6 +2146,7 @@ window.__iniciaProposta=function(){
           c.sec = (c.sec || []).filter(function(x){ return x[0] !== 'notion'; }).concat([[ 'notion', velho ? 'mais fotos' : 'fotos', 'fotos' ]]);
         }
         c.videos = velho ? null : linhas(r.videos);
+        c.videoArq = (r.videoArquivos || []).filter(Boolean);
         if (!c.capa || !c.capa[0]) return;
         if (r.manchete) ANUNCIO[c.id] = { h: marca(r.manchete), tema: temaPorNome[String(r.cor || '').toLowerCase()] || 'creme' };
         else if (!ANUNCIO[c.id]) ANUNCIO[c.id] = { h: esc(c.t), tema: temaPorNome[String(r.cor || '').toLowerCase()] || 'creme' };
@@ -2274,7 +2280,13 @@ window.__iniciaProposta=function(){
       var arr = IMG[c.id] && IMG[c.id][s[0]]; if (!arr || !arr.length) return;
       h += '<div class="w midia"><h3><span class="pl">pl. ' + (k + 1 < 10 ? '0' : '') + (k + 1) + '</span> ' + esc(s[1]) + '</h3><div class="m-' + s[2] + '">' + arr.map(function(a, n){ return item(a[0], n + 1, arr.length, c, s, s[2]); }).join('') + '</div></div>';
     });
-    if (c.videos && c.videos.length) h += '<div class="w midia"><h3><span class="pl">pl. ' + (c.sec.length + 1 < 10 ? '0' : '') + (c.sec.length + 1) + '</span> vídeos</h3><ul class="v-links">' + c.videos.map(function(u, n){ return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + (/instagram\.com/.test(u) ? 'ver o vídeo ' + (n + 1) + ' no Instagram ↗' : 'ver o vídeo ' + (n + 1) + ' ↗') + '</a></li>'; }).join('') + '</ul></div>';
+    var temArq = c.videoArq && c.videoArq.length, temLink = c.videos && c.videos.length;
+    if (temArq || temLink) {
+      h += '<div class="w midia"><h3><span class="pl">pl. ' + (c.sec.length + 1 < 10 ? '0' : '') + (c.sec.length + 1) + '</span> vídeos</h3>';
+      if (temArq) h += '<div class="m-videos">' + c.videoArq.map(function(u, n){ return '<figure class="vid"><video src="' + esc(u) + '" muted loop playsinline preload="metadata" aria-label="vídeo ' + (n + 1) + ' de ' + esc(c.t) + '"></video><button type="button" class="vid-som" aria-label="Ver com som">▶ ver com som</button></figure>'; }).join('') + '</div>';
+      if (temLink) h += '<ul class="v-links"' + (temArq ? ' style="margin-top:20px"' : '') + '>' + c.videos.map(function(u, n){ return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + (/instagram\.com/.test(u) ? 'ver o vídeo ' + (n + 1) + ' no Instagram ↗' : 'ver o vídeo ' + (n + 1) + ' ↗') + '</a></li>'; }).join('') + '</ul>';
+      h += '</div>';
+    }
     h += '<div class="w prox"><button type="button" data-prox="' + prox.id + '"><small>próxima edição // ' + esc(prox.onde) + '</small><b>' + (ANUNCIO[prox.id] ? ANUNCIO[prox.id].h : esc(prox.t)) + ' →</b></button></div>';
     casoEl.innerHTML = h;
     casoEl.hidden = false; casoEl.scrollTop = 0;
@@ -2282,6 +2294,17 @@ window.__iniciaProposta=function(){
     document.documentElement.style.overflow = 'hidden';
     casoEl.style.animation = 'none'; void casoEl.offsetWidth; casoEl.style.animation = '';
     $('#casoX').focus({ preventScroll: true });
+    ligaVideos();
+  }
+  /* vídeos das campanhas: tocam sem som quando aparecem; com um clique, ganham som e controles */
+  casoEl.addEventListener('click', function(e){
+    var b = e.target.closest('.vid-som'); if (!b) return;
+    var v = b.parentNode.querySelector('video'); v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function(){}); b.remove();
+  });
+  function ligaVideos(){
+    var vs = $$('#caso .vid video'); if (!vs.length || !('IntersectionObserver' in window)) return;
+    var ob = new IntersectionObserver(function(es){ es.forEach(function(en){ var v = en.target; if (en.isIntersecting) { if (v.muted && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } } else if (!v.paused) v.pause(); }); }, { root: casoEl, threshold: .35 });
+    vs.forEach(function(v){ ob.observe(v); });
   }
   function fecha(){
     casoEl.hidden = true; casoEl.innerHTML = ''; casoId = null;
