@@ -912,6 +912,23 @@ body.is-prop{background:#FFF6E4}
 .caso .vid video{display:block;width:100%;height:auto;max-height:78vh;background:#0b0907;border-radius:1px}
 .caso .vid-som{position:absolute;left:18px;bottom:18px;min-height:40px;padding:0 16px;border:0;border-radius:999px;background:rgba(0,27,46,.85);color:#F6EDD9;font-family:var(--f-osd);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .caso .vid-som:hover{background:#001B2E}
+/* ===== cartão-postal no celular: compacto, sem buracos, selo ao lado do "para" ===== */
+@media (max-width:759px){
+  .postal{transform:none;padding:22px 18px 24px;box-shadow:0 18px 36px rgba(0,0,0,.4)}
+  .postal::after{inset:7px}
+  .p-msg,.p-end{gap:12px}
+  .p-tit{font-size:26px}
+  .postal .campo textarea{min-height:0;height:152px}
+  .postal .campo{gap:2px;align-content:start}
+  .postal .campo input{height:46px;min-height:0;padding:6px 2px}
+  .postal .campo input{font-size:22px}
+  .postal .p-end{grid-template-columns:minmax(0,1fr) auto;column-gap:14px;padding-top:18px;margin-top:18px}
+  .postal .p-end > *{grid-column:1 / -1}
+  .postal .p-selo{position:relative;right:auto;top:auto;grid-column:2;grid-row:1;width:78px;align-self:start;transform:rotate(4deg)}
+  .postal .p-para{grid-column:1;grid-row:1;margin-top:0;align-self:end;font-size:20px}
+  .postal .p-carimbo{right:14px;top:6px;width:128px;transform:rotate(-14deg) scale(1.2)}
+  .postal .bt{justify-self:stretch;justify-content:center}
+}
 
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
@@ -946,12 +963,13 @@ body.is-prop{background:#FFF6E4}
 .quadro-a .bt.fio{background:transparent;color:var(--azul);box-shadow:inset 0 0 0 1.5px var(--azul)}
 .quadro-a .bt.fio:hover{background:var(--azul);color:#FFF0D3}
 .quadro-a .dica{font-family:var(--f-tipo);font-size:12.5px;color:var(--cafe)}
-.quadro-a.vert{height:auto;aspect-ratio:9/21;max-height:none}
+.quadro-a.vert{height:auto;aspect-ratio:9/17;max-height:none}
+.quadro-a.vert .peca.fora-mob{display:none}
 .quadro-a.vert .texto-a{top:3%;transform:translate(-50%,0);width:90%;gap:12px}
 .quadro-a.vert h1{font-size:clamp(34px,10vw,52px)}
 .quadro-a .texto-a{text-shadow:0 0 14px #F7EBD2,0 0 4px #F7EBD2}
 .quadro-a .texto-a .bt{text-shadow:none}
-@media (max-width:699px){.quadro-a{height:auto;aspect-ratio:9/21}}
+@media (max-width:699px){.quadro-a{height:auto;aspect-ratio:9/17}}
 .peca{position:absolute;left:50%;top:50%;width:12%;transform:translate(-50%,-50%) rotate(var(--r,0deg)) scale(var(--s,1));transition:left 1.1s cubic-bezier(.2,.8,.2,1),top 1.1s cubic-bezier(.2,.8,.2,1),transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;z-index:var(--z,2)}
 .peca.arrasta{transition:none;cursor:grabbing;z-index:70 !important;filter:drop-shadow(0 22px 22px rgba(60,40,10,.35))}
 .peca.foto{background:#F4EAD4;padding:clamp(4px,.55vw,8px) clamp(4px,.55vw,8px) clamp(14px,1.8vw,26px);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 22px rgba(60,40,10,.28),0 2px 4px rgba(60,40,10,.2)}
@@ -2102,7 +2120,7 @@ window.__iniciaProposta=function(){
         '<span class="' + cls + '"><img src="' + (larga ? fonte(c.capaLarga) : fonte(c.capa[0], '-m')) + '" alt="" loading="lazy"></span>' +
         '<span class="rodape"><span class="marca-a"><b>' + esc(c.marca || c.onde.split(' · ')[0].toLowerCase()) + '</b><i>' + esc(c.t) + (c.ano ? ' · ' + c.ano : '') + '</i></span></span>' +
         '<span class="no" aria-hidden="true">nº ' + (CASOS.indexOf(c) + 1 < 10 ? '0' : '') + (CASOS.indexOf(c) + 1) + '</span></span>' +
-        '<span class="cat">' + nomeCat[filtroAtual !== 'todos' ? filtroAtual : c.cat[0]] + ' · ver trabalho →</span></button>';
+        '<span class="cat">ver trabalho →</span></button>';
     }).join('');
     var als = $$('.album', albunsEl);
     als.forEach(function(el, i){ el.classList.add('sobe'); el.style.setProperty('--d', ((i % 3) * .09).toFixed(2) + 's'); });
@@ -2170,21 +2188,21 @@ window.__iniciaProposta=function(){
   var mood = $('#mood'), moodBtn = $('#moodBtn'), textoA = $('.texto-a', mood);
   /* arrumado: duas grades alinhadas (3 colunas x 3 linhas) nas laterais; o miolo fica só para o texto */
   var PECAS = [
-    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[16,63,22,-3] },
+    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[17,63,22,-3] },
     { t:'foto', v:'fita', src:'horror-pecas-1-m', leg:'horror story', o:[16.25,20,8,1], p:[50,63,22,2] },
-    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[83,63,22,4] },
-    { t:'foto', v:'clipe', src:'drlove-fotos-5-m', leg:'drinques', o:[16.25,80,8,1], p:[17,78,22,3] },
-    { t:'foto', v:'fita', src:'bones-fotos-3-m', leg:'bonés', o:[7,80,8,-1], p:[50,78,22,-2] },
-    { t:'foto', v:'cantos', src:'drformosa-fotos-5-m', leg:'formosa', o:[74.5,20,8,1], p:[83,78,22,-3] },
-    { t:'foto', v:'cantos', src:'magic-fotos-6-m', leg:'love · palco', larga:true, o:[79.1,80,17.25,-.5], p:[30,92,38,2] },
-    { t:'foto', v:'serrilha', src:'rolim-fotos-3-m', leg:'rolim', o:[93,20,8,1], p:[66,92,20,-3] },
-    { t:'foto', v:'fita', src:'salao-tudo-7-m', leg:'salão dourado', o:[83.75,20,8,-1], p:[87,92,20,4] },
-    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[9.5,48,0,-3] },
-    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[25.8,48,0,2], carimbo:true },
-    { t:'selo', c:'#ADB6C5', f:'#001B2E', n:'névoa', im:'bones-fotos-1-m', bl:'multiply', o:[25.5,80,0,1], p:[42.1,48,0,-2] },
-    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[58.4,48,0,3] },
-    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[74.7,48,0,-4], carimbo:true },
-    { t:'selo', c:'#FFF0D3', f:'#001B2E', n:'areia', carimbo:true, im:'rolim-fotos-1-m', bl:'multiply', o:[93,80,0,1], p:[91,48,0,3] },
+    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[83,63,22,3] },
+    { t:'foto', v:'clipe', src:'drlove-fotos-5-m', leg:'drinques', o:[16.25,80,8,1], p:[17,86,22,2] },
+    { t:'foto', v:'fita', src:'bones-fotos-3-m', leg:'bonés', o:[7,80,8,-1], p:[50,86,22,-2] },
+    { t:'foto', v:'cantos', src:'drformosa-fotos-5-m', leg:'formosa', o:[74.5,20,8,1], p:[83,86,22,-3] },
+    { t:'foto', fora:true, v:'cantos', src:'magic-fotos-6-m', leg:'love · palco', larga:true, o:[79.1,80,17.25,-.5], p:[30,92,38,2] },
+    { t:'foto', fora:true, v:'serrilha', src:'rolim-fotos-3-m', leg:'rolim', o:[93,20,8,1], p:[66,92,20,-3] },
+    { t:'foto', fora:true, v:'fita', src:'salao-tudo-7-m', leg:'salão dourado', o:[83.75,20,8,-1], p:[87,92,20,4] },
+    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[9.5,46,0,-3] },
+    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[25.8,46,0,2], carimbo:true },
+    { t:'selo', c:'#ADB6C5', f:'#001B2E', n:'névoa', im:'bones-fotos-1-m', bl:'multiply', o:[25.5,80,0,1], p:[42.1,46,0,-2] },
+    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[58.4,46,0,3] },
+    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[74.7,46,0,-4], carimbo:true },
+    { t:'selo', c:'#FFF0D3', f:'#001B2E', n:'areia', carimbo:true, im:'rolim-fotos-1-m', bl:'multiply', o:[93,80,0,1], p:[91,46,0,3] },
     { t:'nota', o:[16.25,50,0,-1], p:[50,95,0,0] },
     { t:'ingresso', o:[83.75,50,0,1], p:[50,95,0,0] },
     { t:'lacre', o:[88,45.5,0,0], p:[36,64.5,0,0] }
@@ -2198,6 +2216,7 @@ window.__iniciaProposta=function(){
   var pecas = PECAS.map(function(p, i){
     var el = document.createElement('div');
     el.className = 'peca ' + p.t + (p.v ? ' ' + p.v : '') + (p.larga ? ' larga' : '') + (p.carimbo ? ' carimbado' : '');
+    if (p.fora) el.classList.add('fora-mob');
     el.setAttribute('aria-hidden', 'true');
     if (p.t === 'foto') { el.innerHTML = '<img src="img/' + p.src + '.webp" alt="" draggable="false"><span class="leg">' + p.leg + '</span>'; el.style.setProperty('--dc', (i * .12).toFixed(2) + 's'); if (p.v === 'serrilha') el.style.clipPath = deckle(); }
     if (p.t === 'selo') {
