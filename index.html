@@ -940,6 +940,26 @@ body.is-prop{background:#FFF6E4}
   .filtro::-webkit-scrollbar{display:none}
   .filtro button{flex:none;white-space:nowrap}
 }
+/* ===== cartão-postal no celular, versão 2: título e selo no topo, como um postal de verdade ===== */
+@media (max-width:759px){
+  .postal{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"tit selo" "para selo" "msg msg" "assunto assunto" "nome nome" "email email" "envio envio";column-gap:14px;row-gap:14px;padding:24px 20px 26px;background:#FBF4E4 radial-gradient(ellipse at 85% 0%,rgba(115,89,71,.12),transparent 55%)}
+  .postal .p-msg,.postal .p-end{display:contents}
+  .postal .p-tit{grid-area:tit;align-self:end;font-size:28px;line-height:1}
+  .postal .p-selo{grid-area:selo;position:relative;right:auto;top:auto;width:84px;align-self:start;justify-self:end;transform:rotate(5deg);margin:-4px -2px 0 0}
+  .postal .p-para{grid-area:para;align-self:start;margin:0;font-size:19px;line-height:1.2;padding-bottom:10px}
+  .postal .c-msg{grid-area:msg;margin-top:4px}
+  .postal .c-assunto{grid-area:assunto}
+  .postal .c-nome{grid-area:nome}
+  .postal .c-email{grid-area:email}
+  .postal .envio{grid-area:envio;margin-top:4px}
+  .postal .p-carimbo{right:46px;top:16px;width:120px}
+  .postal .campo textarea{height:154px;line-height:38px}
+  .postal .campo{gap:0}
+  .postal .campo label{font-size:10.5px}
+  .postal .campo input{height:42px;font-size:22px}
+  .postal .campo select{min-height:42px}
+  .postal .bt{justify-self:stretch;justify-content:center;min-height:52px}
+}
 
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
@@ -976,7 +996,10 @@ body.is-prop{background:#FFF6E4}
 .quadro-a .dica{font-family:var(--f-tipo);font-size:12.5px;color:var(--cafe)}
 .quadro-a.vert{height:auto;aspect-ratio:9/17;max-height:none}
 .quadro-a.vert .peca.fora-mob{display:none}
-.quadro-a.vert .texto-a{top:3%;transform:translate(-50%,0);width:90%;gap:12px}
+.quadro-a.vert .texto-a{top:34%;transform:translate(-50%,0);width:90%;gap:12px}
+.quadro-a.vert .dica{display:none}
+.quadro-a.vert .peca.selo{width:19%}
+.quadro-a.vert .peca.lacre{width:14%}
 .quadro-a.vert h1{font-size:clamp(34px,10vw,52px)}
 .quadro-a .texto-a{text-shadow:0 0 14px #F7EBD2,0 0 4px #F7EBD2}
 .quadro-a .texto-a .bt{text-shadow:none}
@@ -1011,8 +1034,8 @@ body.is-prop{background:#FFF6E4}
 .peca.lacre span{font-family:var(--f-d);font-style:italic;font-weight:600;font-size:clamp(13px,1.4vw,21px);color:#4b382b;text-shadow:1px 1px 0 rgba(255,255,255,.18),-1px -1px 0 rgba(0,0,0,.35)}
 .peca.dymo{width:auto;padding:6px 12px 5px;background:var(--azul);color:#E8EDF3;font-family:var(--f-mono);font-weight:500;font-size:clamp(9.5px,.85vw,12px);letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.25),0 -1px 0 rgba(0,0,0,.5);box-shadow:inset 0 2px 2px rgba(255,255,255,.12),inset 0 -2px 3px rgba(0,0,0,.45),0 6px 12px rgba(0,27,46,.3);border-radius:2px}
 .quadro-a.vert .peca.nota,.quadro-a.vert .peca.ingresso,.quadro-a.vert .peca.dymo{display:none}
-.quadro-a.vert .peca.selo{width:14.6%}
-.quadro-a.vert .peca.lacre{width:11%}
+.quadro-a.vert .peca.selo{width:19%}
+.quadro-a.vert .peca.lacre{width:14%}
 .quadro-a.vert .selo .t > span{display:none}
 .quadro-a.vert .selo .t{align-content:center;justify-items:center}
 .quadro-a.vert .selo .t b{font-size:12px}
@@ -1471,8 +1494,8 @@ body.is-prop{background:#FFF6E4}
           <p class="so" aria-hidden="true"><label>Não preencha: <input name="campo-extra" tabindex="-1" autocomplete="off"></label></p>
           <div class="p-msg">
             <p class="p-tit">cartão-postal</p>
-            <div class="campo larga"><label for="fMsg">Mensagem</label><textarea id="fMsg" name="mensagem" rows="7" required placeholder="Querida Manu, a coisa desandou quando…"></textarea></div>
-            <div class="campo larga"><label for="fAssunto">Assunto</label>
+            <div class="campo larga c-msg"><label for="fMsg">Mensagem</label><textarea id="fMsg" name="mensagem" rows="7" required placeholder="Querida Manu, a coisa desandou quando…"></textarea></div>
+            <div class="campo larga c-assunto"><label for="fAssunto">Assunto</label>
             <select id="fAssunto" name="assunto">
               <option>Gestão de projetos de marketing</option>
               <option>Coordenação de produção criativa</option>
@@ -1488,8 +1511,8 @@ body.is-prop{background:#FFF6E4}
             <span class="selo-mj p-selo" aria-hidden="true" style="--c:#294C60;--t:#FFF0D3;--b:screen"><span class="sm-arte"><img src="img/avatar.png" alt=""><span class="sm-topo">correio · mj</span><span class="sm-nome">manu</span><span class="sm-hex">#294C60</span><span class="sm-val"><small>R$</small>26</span></span></span>
             <svg class="p-carimbo" viewBox="0 0 160 100" aria-hidden="true"><defs><path id="pmP" d="M40 50 m-26 0 a26 26 0 1 1 52 0 a26 26 0 1 1 -52 0"/></defs><g fill="none" stroke="currentColor"><circle cx="40" cy="50" r="31" stroke-width="1.8"/><circle cx="40" cy="50" r="21" stroke-width="1.1"/><path stroke-width="1.6" d="M76 38q7-5 14 0t14 0t14 0t14 0t14 0M76 47q7-5 14 0t14 0t14 0t14 0t14 0M76 56q7-5 14 0t14 0t14 0t14 0t14 0M76 65q7-5 14 0t14 0t14 0t14 0t14 0"/></g><text fill="currentColor" font-size="7.2" letter-spacing="1.6"><textPath href="#pmP">ENVIADO · MANU JUSTEL ·</textPath></text><text x="40" y="49" fill="currentColor" font-size="9.5" text-anchor="middle">CAOS</text><text x="40" y="60" fill="currentColor" font-size="9.5" text-anchor="middle">NO EIXO</text></svg>
             <p class="p-para"><small>para</small>Manu Justel<br>justelmanu@gmail.com</p>
-            <div class="campo"><label for="fNome">De (seu nome)</label><input id="fNome" name="nome" type="text" autocomplete="name" required></div>
-            <div class="campo"><label for="fEmail">Seu e-mail</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+            <div class="campo c-nome"><label for="fNome">De (seu nome)</label><input id="fNome" name="nome" type="text" autocomplete="name" required></div>
+            <div class="campo c-email"><label for="fEmail">Seu e-mail</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
             <div class="envio">
               <button type="submit" class="bt">Enviar o postal
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
@@ -2199,24 +2222,24 @@ window.__iniciaProposta=function(){
   var mood = $('#mood'), moodBtn = $('#moodBtn'), textoA = $('.texto-a', mood);
   /* arrumado: duas grades alinhadas (3 colunas x 3 linhas) nas laterais; o miolo fica só para o texto */
   var PECAS = [
-    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[17,63,22,-3] },
-    { t:'foto', v:'fita', src:'horror-pecas-1-m', leg:'horror story', o:[16.25,20,8,1], p:[50,63,22,2] },
-    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[83,63,22,3] },
-    { t:'foto', v:'clipe', src:'drlove-fotos-5-m', leg:'drinques', o:[16.25,80,8,1], p:[17,86,22,2] },
-    { t:'foto', v:'fita', src:'bones-fotos-3-m', leg:'bonés', o:[7,80,8,-1], p:[50,86,22,-2] },
-    { t:'foto', v:'cantos', src:'drformosa-fotos-5-m', leg:'formosa', o:[74.5,20,8,1], p:[83,86,22,-3] },
+    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[27,17,34,-8] },
+    { t:'foto', v:'fita', src:'horror-pecas-1-m', leg:'horror story', o:[16.25,20,8,1], p:[50,15,34,2] },
+    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[73,18,34,8] },
+    { t:'foto', fora:true, v:'clipe', src:'drlove-fotos-5-m', leg:'drinques', o:[16.25,80,8,1], p:[17,86,22,2] },
+    { t:'foto', fora:true, v:'fita', src:'bones-fotos-3-m', leg:'bonés', o:[7,80,8,-1], p:[50,86,22,-2] },
+    { t:'foto', fora:true, v:'cantos', src:'drformosa-fotos-5-m', leg:'formosa', o:[74.5,20,8,1], p:[83,86,22,-3] },
     { t:'foto', fora:true, v:'cantos', src:'magic-fotos-6-m', leg:'love · palco', larga:true, o:[79.1,80,17.25,-.5], p:[30,92,38,2] },
     { t:'foto', fora:true, v:'serrilha', src:'rolim-fotos-3-m', leg:'rolim', o:[93,20,8,1], p:[66,92,20,-3] },
     { t:'foto', fora:true, v:'fita', src:'salao-tudo-7-m', leg:'salão dourado', o:[83.75,20,8,-1], p:[87,92,20,4] },
-    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[9.5,46,0,-3] },
-    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[25.8,46,0,2], carimbo:true },
-    { t:'selo', c:'#ADB6C5', f:'#001B2E', n:'névoa', im:'bones-fotos-1-m', bl:'multiply', o:[25.5,80,0,1], p:[42.1,46,0,-2] },
-    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[58.4,46,0,3] },
-    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[74.7,46,0,-4], carimbo:true },
-    { t:'selo', c:'#FFF0D3', f:'#001B2E', n:'areia', carimbo:true, im:'rolim-fotos-1-m', bl:'multiply', o:[93,80,0,1], p:[91,46,0,3] },
+    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[20,89,0,-4] },
+    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[40,89,0,3], carimbo:true },
+    { t:'selo', fora:true, c:'#ADB6C5', f:'#001B2E', n:'névoa', im:'bones-fotos-1-m', bl:'multiply', o:[25.5,80,0,1], p:[42.1,46,0,-2] },
+    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[60,89,0,-2] },
+    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[80,89,0,4], carimbo:true },
+    { t:'selo', fora:true, c:'#FFF0D3', f:'#001B2E', n:'areia', carimbo:true, im:'rolim-fotos-1-m', bl:'multiply', o:[93,80,0,1], p:[91,46,0,3] },
     { t:'nota', o:[16.25,50,0,-1], p:[50,95,0,0] },
     { t:'ingresso', o:[83.75,50,0,1], p:[50,95,0,0] },
-    { t:'lacre', o:[88,45.5,0,0], p:[36,64.5,0,0] }
+    { t:'lacre', o:[88,45.5,0,0], p:[62,28,0,0] }
   ];
   function deckle(){ var pts = [], n = 16, i, j = function(){ return (Math.random() * 1.6).toFixed(2); };
     for (i = 0; i <= n; i++) pts.push((i / n * 100).toFixed(1) + '% ' + j() + '%');
@@ -2256,12 +2279,17 @@ window.__iniciaProposta=function(){
   }
   function organiza(){
     arrumado = true; moodBtn.textContent = 'bagunçar';
-    PECAS.forEach(function(p, i){ var v = retrato ? p.p : p.o; coloca(pecas[i], v[0], retrato ? yV(v[1]) : v[1], p.t === 'foto' ? v[2] : 0, v[3], 1, reduce ? 0 : i * .05); });
+    PECAS.forEach(function(p, i){ var v = retrato ? p.p : p.o; coloca(pecas[i], v[0], v[1], p.t === 'foto' ? v[2] : 0, v[3], 1, reduce ? 0 : i * .05); });
     setTimeout(function(){ if (arrumado) mood.classList.add('vivo'); }, reduce ? 0 : 900);
   }
   function bagunca(){
     arrumado = false; moodBtn.textContent = 'arrumar'; mood.classList.remove('vivo');
-    PECAS.forEach(function(p, i){ var y = 10 + aleat(i, 2) * 80, x = 8 + aleat(i, 1) * 84; if (!retrato && x > 28 && x < 72 && y > 18 && y < 82) x = x < 50 ? 8 + aleat(i, 4) * 20 : 72 + aleat(i, 4) * 20; coloca(pecas[i], x, retrato ? yV(42 + y * .58) : y, p.t === 'foto' ? (retrato ? p.p[2] : p.o[2]) * 1.06 : 0, (aleat(i, 3) - .5) * 74, 1.08, reduce ? 0 : i * .02); });
+    PECAS.forEach(function(p, i){
+      var y = 10 + aleat(i, 2) * 80, x = 8 + aleat(i, 1) * 84;
+      if (retrato) { y = aleat(i, 5) < .6 ? 6 + aleat(i, 2) * 24 : 84 + aleat(i, 2) * 11; x = 14 + aleat(i, 1) * 72; }
+      else if (x > 28 && x < 72 && y > 18 && y < 82) x = x < 50 ? 8 + aleat(i, 4) * 20 : 72 + aleat(i, 4) * 20;
+      coloca(pecas[i], x, y, p.t === 'foto' ? (retrato ? p.p[2] : p.o[2]) * (retrato ? .92 : 1.06) : 0, (aleat(i, 3) - .5) * (retrato ? 50 : 74), retrato ? 1 : 1.08, reduce ? 0 : i * .02);
+    });
   }
   medeMood(); bagunca();
   moodBtn.addEventListener('click', function(){ if (arrumado) bagunca(); else organiza(); });
