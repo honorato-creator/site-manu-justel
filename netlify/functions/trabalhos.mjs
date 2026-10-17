@@ -36,6 +36,7 @@ export default async () => {
   const token = (process.env.NOTION_TOKEN || '').trim();
   const db = (process.env.NOTION_DB || '').trim().replace(/-/g, '');
   if (!token || !db) return Response.json({ erro: 'Notion não configurado' }, { status: 503 });
+  if (!/^[0-9a-f]{32}$/i.test(db)) return Response.json({ erro: 'NOTION_DB inválido: use o id da base (32 caracteres, letras e números)' }, { status: 503 });
 
   const trabalhos = [];
   const corpo = (cursor) => JSON.stringify({
@@ -49,7 +50,8 @@ export default async () => {
     headers: { Authorization: `Bearer ${token}`, 'Notion-Version': versao, 'Content-Type': 'application/json' },
     ...(body ? { body } : {}),
   });
-  const detalhe = async (r) => { try { const j = await r.json(); return j.message || j.code || ''; } catch (e) { return ''; } };
+  // só o código do erro (ex.: object_not_found), nunca a mensagem, que pode repetir valores das variáveis
+  const detalhe = async (r) => { try { const j = await r.json(); return j.code || ''; } catch (e) { return ''; } };
 
   try {
     // 1ª tentativa: API clássica (consulta a base pelo id)
