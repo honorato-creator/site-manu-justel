@@ -929,6 +929,17 @@ body.is-prop{background:#FFF6E4}
   .postal .p-carimbo{right:14px;top:6px;width:128px;transform:rotate(-14deg) scale(1.2)}
   .postal .bt{justify-self:stretch;justify-content:center}
 }
+/* celular: um trabalho por linha, cards grandes e legíveis */
+@media (max-width:599px){
+  .albuns{grid-template-columns:minmax(0,1fr);gap:30px}
+  .albuns .album{max-width:440px;width:100%;justify-self:center}
+  .js .retrato.sobe img{-webkit-mask:none;mask:none}
+}
+@media (max-width:599px){
+  .filtro{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-20px;padding:2px 20px 6px;scroll-padding-inline:20px;-webkit-mask:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 28px),transparent);mask:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 28px),transparent)}
+  .filtro::-webkit-scrollbar{display:none}
+  .filtro button{flex:none;white-space:nowrap}
+}
 
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
@@ -2113,7 +2124,7 @@ window.__iniciaProposta=function(){
     albunsEl.classList.toggle('todos', filtroAtual === 'todos');
     albunsEl.innerHTML = lista.map(function(c, n){
       var cls = 'capa' + (c.capaCabe ? ' cabe' : '') + (c.capaTopo ? ' topo' : '');
-      var larga = filtroAtual === 'todos' && c.capaLarga && (n === 0 || n === lista.length - 1);
+      var larga = filtroAtual === 'todos' && c.capaLarga && (n === 0 || n === lista.length - 1) && window.innerWidth >= 600;
       var ad = ANUNCIO[c.id] || { h: esc(c.t), tema: 'creme' }, fp = c.ctx.length > 260 ? c.ctx.slice(0, 260).replace(/\s+\S*$/, '') + '…' : c.ctx;
       return '<button type="button" class="album' + (larga ? ' larga' : '') + '" data-id="' + c.id + '" data-cur aria-label="Abrir trabalho: ' + esc(c.t) + ', ' + esc(c.onde) + '">' +
         '<span class="anuncio t-' + ad.tema + '"><span class="manchete">' + ad.h + '</span>' +
