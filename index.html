@@ -961,6 +961,15 @@ body.is-prop{background:#FFF6E4}
   .postal .bt{justify-self:stretch;justify-content:center;min-height:52px}
 }
 
+/* galeria em linhas justificadas (sem buracos) */
+.caso .m-fotos.just{columns:auto;column-gap:0;gap:0;display:flex;flex-wrap:wrap;align-items:flex-start}
+.caso .m-fotos.just .it{flex:none;margin:0;break-inside:auto}
+.caso .m-fotos.just .ph{width:100%;display:block}
+.caso .m-fotos.just .ph img{width:100%;height:100%;object-fit:cover}
+/* destaque com três fotos verticais lado a lado */
+.capona.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1vw,14px)}
+.capona.trio img{height:auto;aspect-ratio:2/3;object-fit:cover;width:100%}
+
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
   --f-tipo:'Special Elite','Courier New',Courier,monospace;--f-mao:'Caveat','Segoe Print','Bradley Hand',cursive;--f-mono:'DM Mono',ui-monospace,Menlo,monospace;
@@ -994,16 +1003,16 @@ body.is-prop{background:#FFF6E4}
 .quadro-a .bt.fio{background:transparent;color:var(--azul);box-shadow:inset 0 0 0 1.5px var(--azul)}
 .quadro-a .bt.fio:hover{background:var(--azul);color:#FFF0D3}
 .quadro-a .dica{font-family:var(--f-tipo);font-size:12.5px;color:var(--cafe)}
-.quadro-a.vert{height:auto;aspect-ratio:9/17;max-height:none}
+.quadro-a.vert{height:auto;aspect-ratio:9/13;max-height:none}
 .quadro-a.vert .peca.fora-mob{display:none}
-.quadro-a.vert .texto-a{top:34%;transform:translate(-50%,0);width:90%;gap:12px}
+.quadro-a.vert .texto-a{top:44%;transform:translate(-50%,0);width:90%;gap:12px}
 .quadro-a.vert .dica{display:none}
 .quadro-a.vert .peca.selo{width:19%}
 .quadro-a.vert .peca.lacre{width:14%}
 .quadro-a.vert h1{font-size:clamp(34px,10vw,52px)}
 .quadro-a .texto-a{text-shadow:0 0 14px #F7EBD2,0 0 4px #F7EBD2}
 .quadro-a .texto-a .bt{text-shadow:none}
-@media (max-width:699px){.quadro-a{height:auto;aspect-ratio:9/17}}
+@media (max-width:699px){.quadro-a{height:auto;aspect-ratio:9/13}}
 .peca{position:absolute;left:50%;top:50%;width:12%;transform:translate(-50%,-50%) rotate(var(--r,0deg)) scale(var(--s,1));transition:left 1.1s cubic-bezier(.2,.8,.2,1),top 1.1s cubic-bezier(.2,.8,.2,1),transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;z-index:var(--z,2)}
 .peca.arrasta{transition:none;cursor:grabbing;z-index:70 !important;filter:drop-shadow(0 22px 22px rgba(60,40,10,.35))}
 .peca.foto{background:#F4EAD4;padding:clamp(4px,.55vw,8px) clamp(4px,.55vw,8px) clamp(14px,1.8vw,26px);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 22px rgba(60,40,10,.28),0 2px 4px rgba(60,40,10,.2)}
@@ -1327,7 +1336,7 @@ body.is-prop{background:#FFF6E4}
         <h1>Eu? Organizo <em>o caos.</em> Você? Foca no que <em class="sub">importa!</em></h1>
         <p class="texto">Conecto estratégia, criação e execução. Organizo projetos, equipes e prazos para que ideias virem campanhas bem executadas.</p>
         <div class="acoes"><button type="button" class="bt" id="moodBtn">bagunçar</button><a class="bt fio" href="#trabalhos">ver trabalhos ↓</a></div>
-        <span class="dica" aria-hidden="true">arraste as peças pela mesa</span>
+        <span class="dica" aria-hidden="true">arraste as fotos pelo quadro</span>
       </div>
       <span class="grao" aria-hidden="true"></span>
     </div>
@@ -1392,7 +1401,7 @@ body.is-prop{background:#FFF6E4}
           <span class="fita-n" aria-hidden="true"></span>
           <p class="n-num">lista nº 04</p>
           <h3>Estruturação de processos de marketing</h3>
-          <ul><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Desenho fluxos para conteúdo e campanhas</li><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Padronizo as etapas do planejamento à publicação</li><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Crio rotinas de acompanhamento de demandas</li></ul>
+          <ul><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Desenho fluxos para conteúdo e campanhas</li><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Padronizo as etapas do planejamento à execução</li><li><span class="cx" aria-hidden="true"><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5c2 1.2 3.6 3 4.6 5.2C11 12.4 15.4 7.4 21 3.6"/></svg></span>Crio rotinas de acompanhamento de demandas</li></ul>
         </article>
         <article class="nota-f" style="--r:-1.2deg">
           <span class="fita-n" aria-hidden="true"></span>
@@ -1424,11 +1433,11 @@ body.is-prop{background:#FFF6E4}
         </header>
         <p class="j-lead">Se você se reconheceu em algum desses anúncios, a gente já tem assunto para o café.</p>
         <div class="j-cols">
-          <article class="cl"><p class="cl-k">procura-se solução</p><h3>A ideia é ótima, mas nunca sai do papel.</h3><p class="cl-r">Eu transformo a ideia em plano, com etapas, responsáveis e data para ir ao ar.</p></article>
-          <article class="cl"><p class="cl-k">procura-se solução</p><h3>Sua equipe é talentosa, mas cada um vai para um lado.</h3><p class="cl-r">Eu ligo os pontos entre criação, produção e publicação, para todo mundo remar na mesma direção.</p></article>
-          <article class="cl"><p class="cl-k">procura-se solução</p><h3>As demandas chegam por WhatsApp, e-mail, reunião e corredor.</h3><p class="cl-r">Eu organizo um fluxo único, para nada se perder e ninguém precisar adivinhar prioridade.</p></article>
-          <article class="cl"><p class="cl-k">procura-se solução</p><h3>O shooting virou improviso e o resultado não ficou como você imaginou.</h3><p class="cl-r">Eu cuido do briefing à aprovação final, para o que foi pensado ser o que aparece.</p></article>
-          <article class="cl"><p class="cl-k">procura-se solução</p><h3>Postar virou uma corrida de última hora.</h3><p class="cl-r">Eu monto a rotina de conteúdo, para as redes andarem com planejamento e não com susto.</p></article>
+          <article class="cl"><p class="cl-k">procura-se solução</p><h3>A ideia é ótima, mas nunca sai do papel.</h3><p class="cl-r">Eu transformo a ideia em plano, com etapas, responsáveis e data para acontecer.</p></article>
+          <article class="cl"><p class="cl-k">procura-se solução</p><h3>Sua equipe é talentosa, mas cada um vai para um lado.</h3><p class="cl-r">Eu ligo os pontos entre criação, produção e execução, para todo mundo andar para o mesmo lado.</p></article>
+          <article class="cl"><p class="cl-k">procura-se solução</p><h3>As demandas chegam por WhatsApp, e-mail, reunião e conversas nos bastidores.</h3><p class="cl-r">Eu organizo um fluxo único, para nada se perder e ninguém precisar adivinhar prioridade.</p></article>
+          <article class="cl"><p class="cl-k">procura-se solução</p><h3>O shooting virou improviso e o resultado não ficou como você imaginava.</h3><p class="cl-r">Eu cuido do briefing à aprovação final, para que tudo o que for pensado seja entregue.</p></article>
+          <article class="cl"><p class="cl-k">procura-se solução</p><h3>Postar virou uma corrida de última hora.</h3><p class="cl-r">Eu crio a rotina de conteúdo para você parar de publicar coisas no susto e ter tempo de respirar.</p></article>
           <article class="cl"><p class="cl-k">procura-se solução</p><h3>Você vive apagando incêndio e não sobra tempo para pensar no negócio.</h3><p class="cl-r">Eu assumo a coordenação do dia a dia, para você voltar a olhar para o que importa.</p></article>
         </div>
         <div class="acoes j-acoes">
@@ -2068,20 +2077,20 @@ window.__iniciaProposta=function(){
     { id:'pool', cat:['proj', 'cont'], t:'Pool Jeans Week', onde:'Riachuelo · Agência Gira', ano:'2026', capa:['pool-fotos-2','pool-fotos-1'], capaLarga:'pool-capa-larga', capona:'pool-capa-larga',
       ctx:'Uma semana de experiências na Pop Up da Riachuelo em São Paulo, pensada para transformar as novidades da campanha de setembro/2026 em um único grande momento de marca. A ação levou o conceito “Veste e vai” e “Veste, vai e volta” para o ponto de venda e fechou com o lançamento da collab Pool Loop + Marcelo Sommer. O objetivo foi criar desejo, conectar a comunidade à marca e dar mais um motivo para entrar na loja e levar um jeans para casa. Atuei com a equipe da agência Gira, contratada para viabilizar essa campanha.',
       at:['Coordenação das demandas entre a equipe Gira e a equipe Riachuelo, alinhando prazos, aprovações e entregas das cinco frentes da ação (oficinas, DJs, Pool Lucky Locker, A&B e Pool Live Shop);', 'Organização e produção dos conteúdos de divulgação da Pool Jeans Week nas redes da Gira, traduzindo a narrativa em posts, carrosséis e legendas;', 'Coordenação com a designer da confecção dos materiais de impressão e divulgação, com revisão e aprovação das peças antes da produção e da publicação;', 'Apoio à curadoria e ao convite individualizado dos convidados do coquetel de lançamento da collab Pool Loop + Marcelo Sommer;', 'Estruturação de briefings para a equipe de audiovisual, cobrindo registro em tempo real, shorts diários e aftermovie.'],
-      res:['Cinco dias de programação com cinco oficinas de customização, cinco DJs, Pool Lucky Locker, Pool Live Shop e cobertura audiovisual diária.', 'A ação atingiu 146% acima da meta de receita da loja, com crescimento de 48% nas vendas em relação à semana anterior a campanha;', '32 convidados presentes no coquetel de lançamento da collab, a partir de uma lista RP de até 50 nomes entregues como cortesia;', 'Audiência somada de cerca de 4,7 milhões de seguidores entre os perfis de convidados;', 'Parceria com a Bullguer viabilizada pela agência Gira, com cerca de 50 hambúrgueres por dia, o que reduziu o custo de A&B do evento.'],
+      res:['Cinco dias de programação com cinco oficinas de customização, cinco DJs, Pool Lucky Locker, Pool Live Shop e cobertura audiovisual diária.', 'Resultado: 146% acima da meta de receita da loja, com crescimento de 48% nas vendas em relação à semana anterior à campanha;', '32 convidados presentes no coquetel de lançamento da collab, a partir de uma lista RP de até 50 nomes entregues como cortesia;', 'Audiência somada: 4,7 milhões de seguidores entre os perfis de convidados;', 'Parceria com a Bullguer viabilizada pela agência Gira, com cerca de 50 hambúrgueres por dia, o que reduziu o custo de A&B do evento.'],
       sec:[['fotos','fotos do evento','fotos'],['insta','conteúdo nas redes da Gira','docs',null,{1:'anúncio da programação',2:'parceria com a Bullguer',3:'lançamento da collab',4:'Pool Loop + Marcelo Sommer',5:'melhores momentos'}]] },
     { id:'magic', cat:['proj','proc'], t:'Magic Love', onde:'Love', ano:'2025–2026', capa:['magic-fotos-3','magic-fotos-1'], capaLarga:'magic-fotos-6', capona:'magic-fotos-6',
       ctx:'O Magic Love foi criado em 2025 como uma nova experiência artística dentro da programação do Love, marcando o lançamento do primeiro show de strip masculino da casa. Inspirado no universo performático de Magic Mike, o evento foi reinterpretado dentro da estética artística, erótica e contemporânea do cabaré. A campanha de comunicação teve como objetivo apresentar o novo conceito da noite e construir expectativa para o lançamento do evento.',
       at:['Organização do calendário de publicações para divulgação do evento;','Estruturação do fluxo de tarefas da equipe de marketing (copywriter, designer e social media);','Elaboração e acompanhamento de briefings para captação de conteúdo audiovisual;','Integração entre equipe criativa e produção para garantir alinhamento estético da campanha;','Revisão e aprovação das peças gráficas e conteúdos antes da publicação;','Coordenação das entregas de marketing relacionadas ao evento;','Desenvolvimento do conceito visual e organização da produção do calendário 2026, com temática inspirada no universo do espetáculo e fotografias do elenco.'],
       res:['Estruturação da comunicação de lançamento da nova noite temática do Love;','Produção de materiais gráficos e conteúdos alinhados à identidade estética do espetáculo;','Organização do fluxo de trabalho da equipe de marketing para a campanha;','Integração entre produção artística e comunicação visual do evento;','As edições de 2025 atingiram grande sucesso com bilheteria esgotada pouco tempo após o lançamento da comunicação digital.'],
-      sec:[['digital','comunicação digital','posts',{3:reel('DRnVDEYCZqg'),4:reel('DTgiSNSCa3Y')}],['briefing','briefing para captação audiovisual (algumas partes)','docs'],['calendario','imagens do calendário 2026 com o elenco','docs'],['fotos','fotos do evento seguindo o conceito estabelecido pelo marketing','fotos']] },
+      sec:[['digital','comunicação digital','posts'],['briefing','briefing para captação audiovisual (algumas partes)','docs'],['calendario','imagens do calendário 2026 com o elenco','docs'],['fotos','fotos do evento seguindo o conceito estabelecido pelo marketing','fotos']] },
     { id:'horror', cat:['proj','cont'], t:'Love Horror Story', onde:'Love', ano:'2025', link:['lovecabaret.com.br','https://lovecabaret.com.br/'], capa:['horror-pecas-1','horror-fotos-6'], capona:'horror-fotos-4',
       ctx:'A campanha Love Horror Story foi desenvolvida para divulgar a programação especial de Halloween do Love em 2025, composta por noites temáticas realizadas neste período. A comunicação envolveu a criação de peças gráficas e conteúdos para redes sociais, com o objetivo de apresentar a narrativa do evento, destacar as experiências de cada noite e reforçar o posicionamento estético e artístico da casa.',
       atIntro:'Coordenação da produção de conteúdo para a campanha, organizando o fluxo de trabalho entre as etapas de criação, aprovação e publicação, incluindo:',
       at:['Planejamento do calendário de publicações para divulgação das noites temáticas;','Elaboração das copies para peças gráficas e posts de divulgação;','Elaboração de briefing para captação de material audiovisual para produção de conteúdo;','Organização do fluxo de tarefas entre designer, copywriter e social media;','Acompanhamento das etapas de criação e revisão dos materiais;','Aprovação final das peças antes da publicação;','Coordenação das entregas de marketing relacionadas ao evento.'],
       res:['Campanha de divulgação estruturada para as diferentes noites temáticas do evento;','Produção de peças gráficas e conteúdos alinhados à identidade estética do Love;','Entregas realizadas dentro do cronograma de divulgação;','Comunicação organizada e consistente para divulgação da programação de Halloween, que teve vendas esgotadas em pouco tempo, após o lançamento.'],
-      sec:[['briefing','briefing de captação audiovisual (algumas partes)','docs'],['pecas','peças de divulgação: conteúdo para o Instagram','posts'],['insta','conteúdo do Instagram','posts',{3:reel('DQsH7XuCS8A')},{3:'aftermovie das noites'}],['fotos','fotos do evento seguindo o conceito estabelecido pelo marketing','fotos']] },
-    { id:'vegas', cat:['cont','proc'], t:'Gestão de conteúdo e operação de marketing', onde:'Grupo Vegas', ano:'', capa:['vegas-pubs-3','vegas-pubs-7'], capaTopo:true, capona:'vegas-notion-1', caponaCabe:true,
+      sec:[['briefing','briefing de captação audiovisual (algumas partes)','docs'],['pecas','peças de divulgação: conteúdo para o Instagram','posts'],['insta','conteúdo do Instagram','posts',null,{3:'aftermovie das noites'}],['fotos','fotos do evento seguindo o conceito estabelecido pelo marketing','fotos']] },
+    { id:'vegas', cat:['cont','proc'], t:'Gestão de conteúdos para redes sociais', onde:'Grupo Vegas', semOnde:true, ano:'', capa:['vegas-pubs-3','vegas-pubs-7'], capaTopo:true, capona:null,
       ctx:'Organização da operação de conteúdo para diferentes marcas, estruturando o fluxo de produção entre planejamento, criação e publicação. Atuação focada em garantir consistência na comunicação, cumprimento de cronogramas e integração entre equipes de marketing e criação.',
       sec:[['copy','organização das demandas de conteúdo para a copywriter','largo'],['notion','gestão dos conteúdos no Notion','largo'],['pubs','publicações','posts',{4:reel('DVPEZNHgUO2'),5:reel('DTgiSNSCa3Y'),8:reel('DVuEl7jESPQ')}]] },
     { id:'vinis', cat:['prod'], t:'Acervo de vinis', onde:'Formosa Hi-Fi', ano:'', link:['formosahifi.com','https://formosahifi.com/'], capa:['vinis-fotos-3','vinis-fotos-9'], capona:'vinis-fotos-4',
@@ -2094,7 +2103,7 @@ window.__iniciaProposta=function(){
       at:['Elaboração do briefing de captação, com mood board e referências visuais para orientar a estética do ensaio;','Alinhamento com o fotógrafo e com a gerência do bar sobre objetivos e direcionamento visual do material;','Organização das ideias e definição de abordagens visuais para destacar o produto;','Acompanhamento do processo de seleção e aprovação final das imagens entregues.'],
       res:['Produção de imagens do boné alinhadas à identidade estética do Formosa Hi-Fi e criação de banco de fotos do produto.'],
       sec:[['mood','mood board de referência','largo'],['fotos','fotos','fotos'],['uso','uso na comunicação','largo']] },
-    { id:'drformosa', cat:['prod','proj'], t:'Nova carta de drinques', onde:'Formosa Hi-Fi', ano:'2026', link:['@formosahifi','https://www.instagram.com/formosahifi/'], capa:['drformosa-fotos-12','drformosa-fotos-5'], capona:'drformosa-fotos-11',
+    { id:'drformosa', cat:['prod','proj'], t:'Nova carta de drinques', onde:'Formosa Hi-Fi', ano:'2026', link:['@formosahifi','https://www.instagram.com/formosahifi/'], capa:['drformosa-fotos-12','drformosa-fotos-5'], capona:['drformosa-fotos-10','drformosa-fotos-5','drformosa-fotos-11'],
       ctx:'Atualização da carta de drinques da Formosa Hi-Fi, desenvolvida como uma extensão da identidade conceitual do bar. Inspirada na experiência de ouvir um disco de vinil, a carta foi organizada em "lados A e B", reunindo drinques clássicos e autorais em uma narrativa que reforça o posicionamento cultural e sensorial da marca. A atualização exigiu a produção de novos materiais visuais e a organização da comunicação para apresentar o conceito ao público por meio das redes sociais e campanhas de lançamento.',
       at:['Organização das demandas entre equipe de marketing, fotógrafo e operação do bar;','Elaboração do briefing de direção criativa para a captação das novas imagens da carta, incluindo referências visuais, mood board e direcionamentos estéticos;','Alinhamento prévio com o fotógrafo para garantir coerência entre o conceito da marca e a produção das imagens;','Produção e acompanhamento do shooting, contribuindo com direcionamento criativo e validação das composições fotográficas;','Revisão e aprovação dos materiais produzidos antes da divulgação.'],
       res:['Produção de um banco de imagens alinhado ao posicionamento visual do Formosa Hi-Fi;','Comunicação estruturada para apresentar ao público o novo conceito da carta de drinques;','Organização integrada entre produção criativa, operação e equipe de marketing durante todas as etapas do projeto;','Materiais desenvolvidos para utilização em campanhas, redes sociais e futuras ações de comunicação.'],
@@ -2103,8 +2112,8 @@ window.__iniciaProposta=function(){
       ctx:'Atualização do cardápio de almoço e brunch do Salão Dourado, incluindo novos pratos e a necessidade de apresentar essas novidades ao público por meio de materiais visuais e comunicação nas redes sociais. A iniciativa envolveu a produção de novas imagens dos produtos, organização da divulgação e alinhamento entre equipe de operação, captação de conteúdo e comunicação.',
       at:['Estruturação do cronograma de tarefas e prazos para o lançamento do novo cardápio;','Organização das demandas entre equipe de comunicação e produção de conteúdo;','Elaboração do briefing para captação das novas fotos e vídeos dos pratos;','Acompanhamento do shooting, contribuindo com sugestões de direção criativa e enquadramentos;','Planejamento e acompanhamento da comunicação do lançamento nas redes sociais.'],
       res:['Produção de material visual consistente para divulgação do novo cardápio;','Lançamento realizado dentro do cronograma planejado;','Criação de banco de imagens de qualidade para comunicação futura do bar;','Bom desempenho nas campanhas de tráfego pago, utilizando os materiais desenvolvidos.'],
-      sec:[['tudo','da captação à publicação','fotos',{6:reel('DSfO7fyjmNk'),8:reel('DTBjm8qkmy_')},{1:'durante a captação',2:'resultado: fotos',3:'conteúdo das redes sociais',4:'resultado: fotos',5:'resultado: fotos',6:'resultado: vídeo',7:'resultado: fotos',8:'resultado: vídeo'}]] },
-    { id:'drlove', cat:['prod'], t:'Nova carta de drinques', onde:'Love', ano:'2026', capa:['drlove-fotos-5','drlove-fotos-9'], capona:'drlove-doc-1', caponaCabe:true,
+      sec:[['bastidores','bastidores','fotos',null,null,{de:'tudo',n:[1]}],['fotos','fotos','fotos',null,null,{de:'tudo',n:[2,4,5,7]}],['uso','uso na comunicação','posts',{2:reel('DSfO7fyjmNk'),3:reel('DTBjm8qkmy_')},null,{de:'tudo',n:[3,6,8]}]] },
+    { id:'drlove', cat:['prod'], t:'Nova carta de drinques', onde:'Love', ano:'2026', link:['lovecabaret.com.br','https://lovecabaret.com.br/'], capa:['drlove-fotos-5','drlove-fotos-9'], capona:['drlove-fotos-3','drlove-fotos-9','drlove-fotos-10'],
       ctx:'O Love passou por um processo de transformação estrutural, artística e operacional, com posterior relançamento da casa. Dentro desse movimento de reposicionamento, a atualização da carta de drinques foi tratada como uma das ações estratégicas para alinhar o produto e a comunicação à nova fase do espaço. Para apoiar esse processo, foi necessária a produção de novos materiais visuais capazes de traduzir o conceito estético e narrativo da marca. O principal desafio foi garantir que a produção fotográfica dos drinques não fosse apenas funcional, mas refletisse o posicionamento artístico e sensorial do Love.',
       at:['Elaboração de um documento de direção de imagem com referências visuais e orientações estéticas;','Estruturação de uma pasta de referências para orientar o fotógrafo quanto ao estilo visual desejado;','Definição de diretrizes de linguagem visual alinhadas ao conceito da casa, incluindo tom sensual, provocativo e sofisticado;','Acompanhamento da sessão de fotos, contribuindo com sugestões de enquadramento, ambientação e escolha de cenários dentro do espaço;','Coordenação dos prazos de entrega e organização do fluxo de aprovação dos materiais produzidos.'],
       res:['Produção de material visual alinhado ao conceito artístico e sensorial do Love;','Organização do fluxo de produção e aprovação das imagens dentro do cronograma do projeto;','Criação de um banco de imagens consistente para comunicação da nova carta de drinques e futuras produções da marca.'],
@@ -2115,7 +2124,7 @@ window.__iniciaProposta=function(){
       at:['Elaboração do briefing criativo para o fotógrafo, incluindo referências visuais, diretrizes estéticas e orientações de do’s and don’ts alinhados à identidade do bar;','Organização do fluxo de trabalho e definição dos prazos de produção e entrega dos materiais;','Acompanhamento da sessão de fotos, contribuindo com sugestões de enquadramento, escolha de cenários e elementos visuais que reforçassem a atmosfera temática do espaço;','Coordenação do processo de seleção e aprovação das imagens produzidas;','Organização dos arquivos e materiais finais para uso na comunicação do bar.'],
       res:['Produção de material visual alinhado à identidade estética do bar;','Processo de captação e aprovação organizado e realizado dentro do cronograma;','Criação de novos materiais visuais para divulgação do cardápio e comunicação do espaço;','Maior consistência estética entre cenografia, produtos e comunicação visual.'],
       sec:[['fotos','fotos','fotos']] },
-    { id:'notion', cat:['notion','proc'], t:'Templates para agências no Notion', onde:'Agência Sanduíche · Agência Gira', marca:'notion', ano:'', capa:['notion-capa','notion-capa-b'], capaLarga:'notion-capa-b', capona:'notion-gira-1', caponaCabe:true,
+    { id:'notion', cat:['notion','proc'], t:'Templates para agências', onde:'Agência Sanduíche · Agência Gira', marca:'Notion', ano:'', capa:['notion-capa','notion-capa-b'], capaLarga:'notion-capa-b', capona:'notion-gira-1', caponaCabe:true,
       ctx:'Transformação de demandas e processos distintos em estruturas organizadas, funcionais e fáceis de utilizar, criando uma ferramenta que facilitasse a gestão das atividades e a visualização dos fluxos de trabalho.',
       sec:[['sanduiche','Agência Sanduíche','largo'],['gira','Agência Gira','largo']] }
   ];
@@ -2131,7 +2140,7 @@ window.__iniciaProposta=function(){
     pool: { h: '<mark>146%</mark> acima da meta.', tema: 'creme' },
     magic: { h: 'A noite que <mark>esgotou</mark> a bilheteria.', tema: 'creme' },
     horror: { h: 'Um cabaré <mark>assombrado.</mark> Ingressos esgotados.', tema: 'escuro' },
-    vegas: { h: 'Cada marca no <mark>seu</mark> calendário.', tema: 'nevoa' },
+    vegas: { h: 'Cada marca com <mark>seu fluxo</mark> de comunicação.', tema: 'nevoa' },
     vinis: { h: 'O som do vinil, em <mark>fotos.</mark>', tema: 'creme' },
     bones: { h: 'Não é só um <mark>boné.</mark>', tema: 'pessego' },
     drformosa: { h: 'Lado A, lado B e um <mark>brinde.</mark>', tema: 'areia' },
@@ -2189,7 +2198,7 @@ window.__iniciaProposta=function(){
         c.ctx = r.projeto || c.ctx || '';
         c.atIntro = r.atIntro || undefined; c.at = linhas(r.atuacao); c.res = linhas(r.resultado);
         if (!c.at.length) delete c.at; if (!c.res.length) delete c.res;
-        c.link = r.link ? [r.textoLink || r.link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), r.link] : undefined;
+        c.link = r.link ? [r.textoLink || r.link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), r.link] : (velho ? velho.link : undefined);
         c.credito = r.credito || undefined;
         var fotos = r.fotos || [], capa = (r.capa && r.capa[0]) || fotos[0];
         if (capa) { c.capa = [capa, capa]; c.capona = capa; c.capaLarga = capa; delete c.capaCabe; delete c.capaTopo; delete c.caponaCabe; }
@@ -2222,24 +2231,24 @@ window.__iniciaProposta=function(){
   var mood = $('#mood'), moodBtn = $('#moodBtn'), textoA = $('.texto-a', mood);
   /* arrumado: duas grades alinhadas (3 colunas x 3 linhas) nas laterais; o miolo fica só para o texto */
   var PECAS = [
-    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[27,17,34,-8] },
-    { t:'foto', v:'fita', src:'horror-pecas-1-m', leg:'horror story', o:[16.25,20,8,1], p:[50,15,34,2] },
-    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[73,18,34,8] },
+    { t:'foto', v:'cantos', src:'magic-fotos-3-m', leg:'magic love', o:[7,20,8,-1], p:[16,21,34,-8] },
+    { t:'foto', v:'fita', src:'horror-pecas-1-m', leg:'horror story', o:[16.25,20,8,1], p:[48,16.5,34,2] },
+    { t:'foto', v:'serrilha', src:'vinis-fotos-3-m', leg:'formosa hi-fi', o:[25.5,20,8,-1], p:[82,22,34,7] },
     { t:'foto', fora:true, v:'clipe', src:'drlove-fotos-5-m', leg:'drinques', o:[16.25,80,8,1], p:[17,86,22,2] },
     { t:'foto', fora:true, v:'fita', src:'bones-fotos-3-m', leg:'bonés', o:[7,80,8,-1], p:[50,86,22,-2] },
     { t:'foto', fora:true, v:'cantos', src:'drformosa-fotos-5-m', leg:'formosa', o:[74.5,20,8,1], p:[83,86,22,-3] },
     { t:'foto', fora:true, v:'cantos', src:'magic-fotos-6-m', leg:'love · palco', larga:true, o:[79.1,80,17.25,-.5], p:[30,92,38,2] },
     { t:'foto', fora:true, v:'serrilha', src:'rolim-fotos-3-m', leg:'rolim', o:[93,20,8,1], p:[66,92,20,-3] },
     { t:'foto', fora:true, v:'fita', src:'salao-tudo-7-m', leg:'salão dourado', o:[83.75,20,8,-1], p:[87,92,20,4] },
-    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[20,89,0,-4] },
-    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[40,89,0,3], carimbo:true },
+    { t:'selo', c:'#001B2E', f:'#FFF0D3', n:'azul', im:'magic-fotos-1-m', bl:'screen', o:[7,50,0,-1], p:[31,5.5,0,-4] },
+    { t:'selo', c:'#294C60', f:'#FFF0D3', n:'petróleo', im:'vinis-fotos-2-m', bl:'screen', o:[25.5,50,0,1], p:[93,34,0,3], carimbo:true },
     { t:'selo', fora:true, c:'#ADB6C5', f:'#001B2E', n:'névoa', im:'bones-fotos-1-m', bl:'multiply', o:[25.5,80,0,1], p:[42.1,46,0,-2] },
-    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[60,89,0,-2] },
-    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[80,89,0,4], carimbo:true },
+    { t:'selo', c:'#FFC49C', f:'#001B2E', n:'pêssego', im:'drlove-fotos-2-m', bl:'multiply', o:[74.5,50,0,-1], p:[34,33,0,-2] },
+    { t:'selo', c:'#735947', f:'#FFF0D3', n:'café', im:'horror-fotos-5-m', bl:'screen', o:[93,50,0,1], p:[65,14,0,4], carimbo:true },
     { t:'selo', fora:true, c:'#FFF0D3', f:'#001B2E', n:'areia', carimbo:true, im:'rolim-fotos-1-m', bl:'multiply', o:[93,80,0,1], p:[91,46,0,3] },
     { t:'nota', o:[16.25,50,0,-1], p:[50,95,0,0] },
     { t:'ingresso', o:[83.75,50,0,1], p:[50,95,0,0] },
-    { t:'lacre', o:[88,45.5,0,0], p:[62,28,0,0] }
+    { t:'lacre', o:[88,45.5,0,0], p:[59,32,0,0] }
   ];
   function deckle(){ var pts = [], n = 16, i, j = function(){ return (Math.random() * 1.6).toFixed(2); };
     for (i = 0; i <= n; i++) pts.push((i / n * 100).toFixed(1) + '% ' + j() + '%');
@@ -2286,7 +2295,7 @@ window.__iniciaProposta=function(){
     arrumado = false; moodBtn.textContent = 'arrumar'; mood.classList.remove('vivo');
     PECAS.forEach(function(p, i){
       var y = 10 + aleat(i, 2) * 80, x = 8 + aleat(i, 1) * 84;
-      if (retrato) { y = aleat(i, 5) < .6 ? 6 + aleat(i, 2) * 24 : 84 + aleat(i, 2) * 11; x = 14 + aleat(i, 1) * 72; }
+      if (retrato) { y = 5 + aleat(i, 2) * 28; x = 10 + aleat(i, 1) * 80; }
       else if (x > 28 && x < 72 && y > 18 && y < 82) x = x < 50 ? 8 + aleat(i, 4) * 20 : 72 + aleat(i, 4) * 20;
       coloca(pecas[i], x, y, p.t === 'foto' ? (retrato ? p.p[2] : p.o[2]) * (retrato ? .92 : 1.06) : 0, (aleat(i, 3) - .5) * (retrato ? 50 : 74), retrato ? 1 : 1.08, reduce ? 0 : i * .02);
     });
@@ -2321,6 +2330,34 @@ window.__iniciaProposta=function(){
     var grande = layout === 'largo' || layout === 'docs';
     return '<div class="it"><button type="button" class="ph" data-k="' + k + '"' + (a[1] ? ' style="aspect-ratio:' + a[1] + '/' + a[2] + '"' : '') + '><img src="' + fonte(base, grande ? '' : '-m') + '" alt="' + alt + '" loading="lazy"' + (a[1] ? ' width="' + a[1] + '" height="' + a[2] + '"' : '') + '></button>' + legenda + '</div>';
   }
+  /* pontuação: todo item termina com ponto final */
+  function ponto(x){ return String(x).replace(/[\s;.,]+$/, '') + '.'; }
+  /* galerias de fotos em linhas que fecham a largura, sem buracos */
+  function justifica(){
+    $$('#caso .m-fotos').forEach(function(g){
+      var its = $$('.it', g); if (!its.length) return;
+      var W = g.clientWidth, gap = window.innerWidth < 600 ? 10 : 14, H0 = window.innerWidth < 600 ? 170 : 300;
+      var r = its.map(function(it){ var im = it.querySelector('img'); var w = +im.getAttribute('width') || 3, h = +im.getAttribute('height') || 2; return w / h; });
+      var soma = r.reduce(function(a, b){ return a + b; }, 0), k = Math.max(1, Math.round(soma * H0 / W)), n = r.length;
+      k = Math.min(k, n);
+      /* divide em k linhas o mais parecidas possível (partição linear) */
+      var cus = [], div = [], i, j, x, pre = [0];
+      for (i = 0; i < n; i++) pre.push(pre[i] + r[i]);
+      for (i = 0; i <= n; i++) { cus.push([]); div.push([]); }
+      for (i = 1; i <= n; i++) cus[i][1] = pre[i];
+      for (j = 1; j <= k; j++) cus[1][j] = r[0];
+      for (i = 2; i <= n; i++) for (j = 2; j <= k; j++) { cus[i][j] = Infinity; for (x = 1; x < i; x++) { var c2 = Math.max(cus[x][j - 1], pre[i] - pre[x]); if (c2 < cus[i][j]) { cus[i][j] = c2; div[i][j] = x; } } }
+      var cortes = [], fim = n; for (j = k; j > 1; j--) { var ini = div[fim][j]; cortes.unshift([ini, fim]); fim = ini; } cortes.unshift([0, fim]);
+      g.classList.add('just');
+      cortes.forEach(function(cr){
+        var lin = r.slice(cr[0], cr[1]), s = lin.reduce(function(a, b){ return a + b; }, 0), m = lin.length;
+        var alt = (W - gap * (m - 1)) / s, maxA = H0 * 1.5; if (alt > maxA) alt = maxA;
+        var cheio = alt < maxA;
+        lin.forEach(function(q, t){ var it = its[cr[0] + t]; it.style.width = cheio ? 'calc((100% - ' + (gap * (m - 1) + .5) + 'px) * ' + (q / s).toFixed(5) + ')' : Math.floor(q * alt * 100) / 100 + 'px'; it.style.marginRight = t < m - 1 ? gap + 'px' : '0'; it.style.marginBottom = gap + 'px'; });
+      });
+    });
+  }
+  var tJust; window.addEventListener('resize', function(){ clearTimeout(tJust); tJust = setTimeout(function(){ if (!casoEl.hidden) justifica(); }, 150); });
   function abre(id, origem){
     var c = porId[id]; if (!c) return;
     casoId = id; fila = []; veioDe = origem || veioDe;
@@ -2328,19 +2365,21 @@ window.__iniciaProposta=function(){
     var ad = ANUNCIO[c.id] || { h: esc(c.t) }, num = (i + 1 < 10 ? '0' : '') + (i + 1);
     var h = '<div class="barra"><div class="w"><strong><span class="nb">nº ' + num + '</span> ' + esc(c.t) + '</strong><button type="button" class="fecha" id="casoX">fechar ✕</button></div></div>';
     h += '<div class="w cabeca"><div class="ed-topo"><span>edição nº ' + num + '</span><span>' + c.cat.map(function(k){ return nomeCat[k]; }).join(' · ') + '</span><span>' + (c.ano || '—') + '</span></div>';
-    h += '<h2>' + ad.h + '</h2><p class="sub">' + esc(c.t) + '</p><div class="onde"><span>' + esc(c.onde) + '</span>' + (c.ano ? '<span>' + c.ano + '</span>' : '') + (c.link ? '<a href="' + c.link[1] + '" target="_blank" rel="noopener">' + esc(c.link[0]) + ' ↗</a>' : '') + (c.credito ? '<span>' + esc(c.credito) + '</span>' : '') + '</div>';
-    h += '<figure class="capona' + (c.caponaCabe ? ' cabe' : '') + '"><img src="' + fonte(c.capona) + '" alt=""></figure></div>';
+    h += '<h2>' + ad.h + '</h2><p class="sub">' + esc(c.t) + '</p><div class="onde">' + (c.semOnde ? '' : '<span>' + esc(c.onde) + '</span>') + (c.ano ? '<span>' + c.ano + '</span>' : '') + (c.link ? '<a href="' + c.link[1] + '" target="_blank" rel="noopener">' + esc(c.link[0]) + ' ↗</a>' : '') + (c.credito ? '<span>' + esc(c.credito) + '</span>' : '') + '</div>';
+    if (Array.isArray(c.capona)) h += '<figure class="capona trio">' + c.capona.map(function(b){ return '<img src="' + fonte(b) + '" alt="">'; }).join('') + '</figure>';
+    else if (c.capona) h += '<figure class="capona' + (c.caponaCabe ? ' cabe' : '') + '"><img src="' + fonte(c.capona) + '" alt=""></figure>';
+    h += '</div>';
     h += '<div class="w texto"><div class="lead"><h3><b>//</b> o projeto</h3><p class="ctx">' + esc(c.ctx) + '</p></div><div class="col">';
-    if (c.at) h += '<div class="bloco"><h3><b>//</b> ' + (c.atT || 'minha atuação') + '</h3>' + (c.atIntro ? '<p class="intro">' + esc(c.atIntro) + '</p>' : '') + '<ol class="lista">' + c.at.map(function(x){ return '<li>' + esc(x.replace(/;$/, '')) + '</li>'; }).join('') + '</ol></div>';
-    if (c.res) h += '<div class="bloco res-b"><h3><b>//</b> resultado</h3><ul class="lista res">' + c.res.map(function(x){ return '<li>' + esc(x.replace(/;$/, '')) + '</li>'; }).join('') + '</ul></div>';
+    if (c.at) h += '<div class="bloco"><h3><b>//</b> ' + (c.atT || 'minha atuação') + '</h3>' + (c.atIntro ? '<p class="intro">' + esc(c.atIntro) + '</p>' : '') + '<ol class="lista">' + c.at.map(function(x){ return '<li>' + esc(ponto(x)) + '</li>'; }).join('') + '</ol></div>';
+    if (c.res) h += '<div class="bloco res-b"><h3><b>//</b> resultado</h3><ul class="lista res">' + c.res.map(function(x){ return '<li>' + esc(ponto(x)) + '</li>'; }).join('') + '</ul></div>';
     h += '</div></div>';
     c.sec.forEach(function(s, k){
-      var arr = IMG[c.id] && IMG[c.id][s[0]]; if (!arr || !arr.length) return;
-      h += '<div class="w midia"><h3><span class="pl">pl. ' + (k + 1 < 10 ? '0' : '') + (k + 1) + '</span> ' + esc(s[1]) + '</h3><div class="m-' + s[2] + '">' + arr.map(function(a, n){ return item(a[0], n + 1, arr.length, c, s, s[2]); }).join('') + '</div></div>';
+      var arr = s[5] ? (IMG[c.id] && IMG[c.id][s[5].de] || []).filter(function(a, n){ return s[5].n.indexOf(n + 1) > -1; }) : IMG[c.id] && IMG[c.id][s[0]]; if (!arr || !arr.length) return;
+      h += '<div class="w midia"><h3><span class="pl">' + (k + 1 < 10 ? '0' : '') + (k + 1) + '</span> ' + esc(s[1]) + '</h3><div class="m-' + s[2] + '">' + arr.map(function(a, n){ return item(a[0], n + 1, arr.length, c, s, s[2]); }).join('') + '</div></div>';
     });
     var temArq = c.videoArq && c.videoArq.length, temLink = c.videos && c.videos.length;
     if (temArq || temLink) {
-      h += '<div class="w midia"><h3><span class="pl">pl. ' + (c.sec.length + 1 < 10 ? '0' : '') + (c.sec.length + 1) + '</span> vídeos</h3>';
+      h += '<div class="w midia"><h3><span class="pl">' + (c.sec.length + 1 < 10 ? '0' : '') + (c.sec.length + 1) + '</span> vídeos</h3>';
       if (temArq) h += '<div class="m-videos">' + c.videoArq.map(function(u, n){ return '<figure class="vid"><video src="' + esc(u) + '" muted loop playsinline preload="metadata" aria-label="vídeo ' + (n + 1) + ' de ' + esc(c.t) + '"></video><button type="button" class="vid-som" aria-label="Ver com som">▶ ver com som</button></figure>'; }).join('') + '</div>';
       if (temLink) h += '<ul class="v-links"' + (temArq ? ' style="margin-top:20px"' : '') + '>' + c.videos.map(function(u, n){ return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + (/instagram\.com/.test(u) ? 'ver o vídeo ' + (n + 1) + ' no Instagram ↗' : 'ver o vídeo ' + (n + 1) + ' ↗') + '</a></li>'; }).join('') + '</ul>';
       h += '</div>';
@@ -2352,7 +2391,7 @@ window.__iniciaProposta=function(){
     document.documentElement.style.overflow = 'hidden';
     casoEl.style.animation = 'none'; void casoEl.offsetWidth; casoEl.style.animation = '';
     $('#casoX').focus({ preventScroll: true });
-    ligaVideos();
+    ligaVideos(); justifica(); setTimeout(justifica, 450);
   }
   /* vídeos das campanhas: tocam sem som quando aparecem; com um clique, ganham som e controles */
   casoEl.addEventListener('click', function(e){
