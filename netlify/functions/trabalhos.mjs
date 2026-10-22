@@ -29,6 +29,9 @@ function linha(pg) {
     idSite: texto(p['id do site']),
     capa: arquivos(p['Capa']),
     fotos: arquivos(p['Fotos']),
+    briefing: arquivos(p['Briefing']),
+    bastidores: arquivos(p['Bastidores']),
+    comunicacao: arquivos(p['Comunicação']),
   };
 }
 
