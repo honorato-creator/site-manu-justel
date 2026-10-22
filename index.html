@@ -2124,7 +2124,7 @@ window.__iniciaProposta=function(){
       at:['Elaboração do briefing criativo para o fotógrafo, incluindo referências visuais, diretrizes estéticas e orientações de do’s and don’ts alinhados à identidade do bar;','Organização do fluxo de trabalho e definição dos prazos de produção e entrega dos materiais;','Acompanhamento da sessão de fotos, contribuindo com sugestões de enquadramento, escolha de cenários e elementos visuais que reforçassem a atmosfera temática do espaço;','Coordenação do processo de seleção e aprovação das imagens produzidas;','Organização dos arquivos e materiais finais para uso na comunicação do bar.'],
       res:['Produção de material visual alinhado à identidade estética do bar;','Processo de captação e aprovação organizado e realizado dentro do cronograma;','Criação de novos materiais visuais para divulgação do cardápio e comunicação do espaço;','Maior consistência estética entre cenografia, produtos e comunicação visual.'],
       sec:[['fotos','fotos','fotos']] },
-    { id:'gaveta', fixo:true, cat:['proc','cont','prod'], t:'A Gaveta da Clotilde', onde:'Gaveta da Clotilde', ano:'', link:['@gavetadaclotilde','https://www.instagram.com/gavetadaclotilde'], capa:['gaveta-pecas-1','gaveta-pecas-2'], capona:['gaveta-pecas-1','gaveta-pecas-7','gaveta-pecas-8'],
+    { id:'gaveta', fixo:true, cat:['proc','cont','prod'], t:'A Gaveta da Clotilde', onde:'Gaveta da Clotilde', semOnde:true, rotulo:'E-commerce', ano:'2018–2023', link:['@gavetadaclotilde','https://www.instagram.com/gavetadaclotilde'], capa:['gaveta-pecas-1','gaveta-pecas-2'], capona:['gaveta-pecas-1','gaveta-pecas-7','gaveta-pecas-8'],
       ctx:'A Gaveta da Clotilde foi um negócio de curadoria e comercialização de peças vintage 100% on-line.',
       at:['Gestão do negócio: administração das operações, organização de processos internos, definição de prioridades e acompanhamento das atividades','Estratégia de comunicação digital: planejamento e gestão de redes sociais, calendário editorial e campanhas sazonais','Produção de conteúdo e copywriting: criação e edição de conteúdos para Instagram e TikTok, além da elaboração de textos institucionais e materiais de comunicação da marca','Relacionamento com a comunidade: interação com o público, atendimento ao cliente e gestão dos pontos de contato digitais','Gestão de campanhas e processos: planejamento e acompanhamento de ações, organização de fluxos de trabalho e monitoramento de resultados','Gestão de fornecedores: alinhamento e acompanhamento de parceiros envolvidos na operação do negócio'],
       res:['Mais de 2.000 peças ressignificadas','Impacto nas redes sociais: 1.547 seguidores no Instagram, 7.565 no TikTok e quase 1 milhão de visualizações (somando as duas plataformas)'],
@@ -2133,7 +2133,7 @@ window.__iniciaProposta=function(){
       ctx:'Transformação de demandas e processos distintos em estruturas organizadas, funcionais e fáceis de utilizar, criando uma ferramenta que facilitasse a gestão das atividades e a visualização dos fluxos de trabalho.',
       sec:[['sanduiche','Agência Sanduíche','largo'],['gira','Agência Gira','largo']] }
   ];
-  CASOS.sort(function(a, b){ return (a.fixo ? 1 : 0) - (b.fixo ? 1 : 0); });
+  CASOS.sort(function(a, b){ return (b.fixo ? 1 : 0) - (a.fixo ? 1 : 0); });
   var porId = {}; CASOS.forEach(function(c){ porId[c.id] = c; });
   var nomeCat = {}; CATS.forEach(function(c){ nomeCat[c[0]] = c[1]; });
   var info = {}; Object.keys(IMG).forEach(function(c){ Object.keys(IMG[c]).forEach(function(s){ IMG[c][s].forEach(function(a){ info[a[0]] = a; }); }); });
@@ -2168,7 +2168,7 @@ window.__iniciaProposta=function(){
       return '<button type="button" class="album' + (larga ? ' larga' : '') + '" data-id="' + c.id + '" data-cur aria-label="Abrir trabalho: ' + esc(c.t) + ', ' + esc(c.onde) + '">' +
         '<span class="anuncio t-' + ad.tema + '"><span class="manchete">' + ad.h + '</span>' +
         '<span class="' + cls + '"><img src="' + (larga ? fonte(c.capaLarga) : fonte(c.capa[0], '-m')) + '" alt="" loading="lazy"></span>' +
-        '<span class="rodape"><span class="marca-a"><b>' + esc(c.marca || c.onde.split(' · ')[0].toLowerCase()) + '</b><i>' + esc(c.t) + (c.ano ? ' · ' + c.ano : '') + '</i></span></span>' +
+        '<span class="rodape"><span class="marca-a"><b>' + esc(c.marca || c.onde.split(' · ')[0].toLowerCase()) + '</b><i>' + (c.rotulo ? esc(c.rotulo) : esc(c.t) + (c.ano ? ' · ' + c.ano : '')) + '</i></span></span>' +
         '<span class="no" aria-hidden="true">nº ' + (CASOS.indexOf(c) + 1 < 10 ? '0' : '') + (CASOS.indexOf(c) + 1) + '</span></span>' +
         '<span class="cat">ver trabalho →</span></button>';
     }).join('');
@@ -2226,7 +2226,7 @@ window.__iniciaProposta=function(){
       });
       if (!novos.length) return;
       var fixos = CASOS.filter(function(c){ return c.fixo; });
-      CASOS.length = 0; Array.prototype.push.apply(CASOS, novos.concat(fixos));
+      CASOS.length = 0; Array.prototype.push.apply(CASOS, fixos.concat(novos));
       porId = {}; CASOS.forEach(function(c){ porId[c.id] = c; });
       var bt = filtroEl.querySelector('[data-f="todos"]'); if (bt) bt.textContent = 'todos (' + CASOS.length + ')';
       pinta();
