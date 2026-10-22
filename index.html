@@ -970,6 +970,10 @@ body.is-prop{background:#FFF6E4}
 .capona.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1vw,14px)}
 .capona.trio img{height:auto;aspect-ratio:2/3;object-fit:cover;width:100%}
 
+/* foto ampliada: sempre inteira na tela, na proporção original */
+.zoom .zi{overflow:hidden}
+.zoom img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain}
+
 /* ===== banner novo no lugar da TV ===== */
 .bnr{--azul:#001B2E;--azul2:#294C60;--cafe:#735947;--lapis:#B5382B;--tinta:#2B2118;--papel:#F3E6CA;
   --f-tipo:'Special Elite','Courier New',Courier,monospace;--f-mao:'Caveat','Segoe Print','Bradley Hand',cursive;--f-mono:'DM Mono',ui-monospace,Menlo,monospace;
