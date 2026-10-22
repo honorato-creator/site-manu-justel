@@ -2195,9 +2195,11 @@ window.__iniciaProposta=function(){
     var marca = function(t){ return esc(t).replace(/\*([^*]+)\*/g, '<mark>$1</mark>'); };
     fetch('/api/trabalhos', { headers: { accept: 'application/json' } }).then(function(r){ if (!r.ok) throw r.status; return r.json(); }).then(function(d){
       if (!d || !d.trabalhos || !d.trabalhos.length) return;
-      var novos = [];
+      var novos = [], usados = {};
       d.trabalhos.forEach(function(r, i){
-        var velho = porId[r.idSite], c = velho ? Object.assign({}, velho) : { id: 'n' + String(r.id).replace(/-/g, '').slice(0, 10), sec: [], capa: [] };
+        /* "id do site" repetido (linha duplicada no Notion): só a primeira usa as fotos do site, as outras viram trabalho novo */
+        var chave = String(r.idSite || '').trim().toLowerCase(), velho = chave && !usados[chave] && porId[chave] && !porId[chave].fixo ? porId[chave] : null; if (velho) usados[chave] = 1;
+        var c = velho ? Object.assign({}, velho) : { id: 'n' + String(r.id).replace(/-/g, '').slice(0, 10), sec: [], capa: [] };
         if (r.titulo) c.t = r.titulo;
         c.onde = r.cliente || c.onde || ''; c.ano = r.ano || '';
         var cats = (r.categorias || []).map(function(n){ return catPorNome[String(n).toLowerCase()]; }).filter(Boolean);
