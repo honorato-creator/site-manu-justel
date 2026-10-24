@@ -49,7 +49,10 @@ function linha(pg) {
 /* só os nomes e tipos dos campos de arquivo (sem conteúdo), para conferir a base */
 const camposArquivo = (pg) => Object.keys(pg.properties || {}).filter((k) => pg.properties[k].type === 'files');
 
-export default async () => {
+export default async (req) => {
+  // Só leitura simples: outro método ou endereço com parâmetros (truque para furar o cache) nem chega ao Notion
+  if (req && req.method !== 'GET' && req.method !== 'HEAD') return new Response(null, { status: 405, headers: { Allow: 'GET, HEAD' } });
+  if (req && new URL(req.url).search) return Response.json({ erro: 'parâmetros não aceitos' }, { status: 400 });
   const token = (process.env.NOTION_TOKEN || '').trim();
   const db = (process.env.NOTION_DB || '').trim().replace(/-/g, '');
   if (!token || !db) return Response.json({ erro: 'Notion não configurado' }, { status: 503 });
