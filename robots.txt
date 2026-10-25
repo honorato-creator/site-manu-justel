@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /obrigada
+Disallow: /api/
+
+Sitemap: https://manujustel.com.br/sitemap.xml
