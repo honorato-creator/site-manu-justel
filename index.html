@@ -1322,6 +1322,40 @@ body.is-prop{background:#FFF6E4}
 .prop .foot .sig .assin{height:58px}
 .prop .foot .sig img{width:44px;height:44px}
 .prop .foot .sig span.av{width:58px;height:58px}
+.prop .diag{margin-bottom:64px}
+.prop .diag fieldset{border:0;margin:0;padding:0;min-width:0}
+.prop .diag legend{padding:0;width:100%}
+.prop .diag .group-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,30px);line-height:1.15;width:100%;order:2}
+.prop .diag .group-head .tier{order:1}
+.prop .diag .dg-dica{order:3;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.prop .diag .groups{gap:38px;padding:clamp(18px,3vw,34px)}
+.prop .dg-col{flex-direction:column;align-items:stretch}
+.prop .dg-col .opt{width:100%;min-height:52px;padding:12px 14px 12px 12px;font-size:15px;line-height:1.45}
+.prop .dg-col .opt b{font-weight:700}
+.prop .dg-radio i{border-radius:50%}
+.prop .dg-frentes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px}
+.prop .dg-frentes h4{font-size:15px;font-weight:700;margin:0 0 10px}
+.prop .dg-campo{display:flex;flex-direction:column;gap:8px;font-size:14.5px;color:var(--muted);margin-top:14px}
+.prop .dg-campo textarea,.prop .dg-campo input{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+.prop .dg-campo textarea{resize:vertical;min-height:130px}
+.prop .dg-campo textarea:focus,.prop .dg-campo input:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.prop .dg-linha{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 18px}
+.prop .dg-envio{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:22px}
+.prop .dg-envio .btn[disabled]{opacity:.6;cursor:wait}
+.prop .dg-nota{font-size:14.5px;color:var(--teal-deep)}
+.prop .dg-nota a{font-weight:600}
+.prop .dg-inv{margin-top:8px}
+.prop .packs{align-items:stretch}
+.prop article.pack{gap:12px;padding:22px 22px 24px}
+.prop article.pack:hover{transform:none}
+.prop .pack .pk-lista{display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45;margin:4px 0 6px;flex:1}
+.prop .pack .pk-lista li{position:relative;padding-left:20px}
+.prop .pack .pk-lista li::before{content:"";position:absolute;left:2px;top:.5em;width:8px;height:8px;border-radius:2px;background:var(--teal)}
+.prop .pack .price{display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line);width:100%}
+.prop .pack .price small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.prop .h-ok{display:inline-grid;place-items:center;width:.62em;height:.62em;margin-left:.12em;vertical-align:.08em;border-radius:.14em;background:var(--teal);color:var(--panel);font-family:var(--body);font-size:.9em;font-style:normal}
+.prop .h-ok svg{width:62%;height:62%}
+
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="tinta" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="2.2" result="d"/><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="9" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.7" result="m"/><feComposite in="d" in2="m" operator="in"/></filter></svg>
 <div class="cursor" id="cursor" aria-hidden="true"><span>ver</span></div>
@@ -1584,11 +1618,11 @@ body.is-prop{background:#FFF6E4}
   <section class="hero">
     <div class="wrap">
       <img class="selo" src="img/logo.png" alt="Manu Justel" width="772" height="480">
-      <p class="mono">Proposta comercial 2026 · Assistente virtual · Especialista em marketing e negócios</p>
-      <h1 class="display">Você foca no que importa. <em>O resto, deixa comigo.</em></h1>
+      <p class="mono">Proposta comercial 2026 · Marketing · Gestão de projetos · Coordenação de produção criativa</p>
+      <h1 class="display">Operação destravada, equipe alinhada e <em>seu tempo de <span style="white-space:nowrap">volta<span class="h-ok" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span></span></em></h1>
       <div class="hero-grid">
         <div class="hero-side">
-          <p>Sou a Manu Justel. Organizo processos, cuido das tarefas operacionais e te ajudo a ser mais produtivo.</p>
+          <p>Assumo a gestão dos bastidores, organizo os processos e coordeno a produção criativa para o seu negócio sair do caos e crescer.</p>
           <div class="cta-row">
             <a class="btn" href="https://wa.me/5516981351074" target="_blank" rel="noopener">Vamos juntos?
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
@@ -1647,8 +1681,8 @@ body.is-prop{background:#FFF6E4}
       </figure>
       <div class="about-text">
         <h2 class="display">Sobre <em>mim</em></h2>
-        <p class="lead">Sou Manuela Justel, profissional de gestão e comunicação, especialista em marketing.</p>
-        <p>Com uma trajetória profissional pautada na organização, eficiência e estratégia. Meu objetivo como assistente virtual é oferecer suporte para profissionais independentes e empresas que desejam focar no que realmente importa: otimizar seu tempo e potencializar seus negócios.</p>
+        <p class="lead">Oi, sou a Manu Justel.</p>
+        <p>Faço a gestão de operações, projetos e processos. Minha especialidade são as agências de marketing e comunicação. Adoro trabalhar com projetos e campanhas culturais, A&amp;B, moda, beleza, ativações de marca e eventos.</p>
         <dl class="creds" aria-label="Minha bagagem">
           <div><dt>MBA</dt><dd>Marketing</dd><dd class="inst">USP</dd></div>
           <div><dt>Graduação</dt><dd>Gerontologia <small>gestão da saúde e envelhecimento</small></dd><dd class="inst">UFSCar</dd></div>
@@ -1669,19 +1703,89 @@ body.is-prop{background:#FFF6E4}
     <div class="wrap">
       <div class="sec-head">
         <h2 class="display">Serviços <em>&amp; valores</em></h2>
-        <p>Marque o que você quer tirar da sua lista. Eu mostro em qual pacote isso cabe e quanto custa.</p>
+        <p>Para receber um orçamento condizente com a sua realidade, preencha o diagnóstico abaixo. É rapidinho e essencial para te tirar do caos logo mais.</p>
       </div>
-      <div class="packs" id="packs" role="group" aria-label="Pacotes"></div>
-      <div class="picker">
-        <div class="panel">
-          <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="name">o-que-eu-assumo</span><button type="button" class="mini" id="clear">Limpar</button></div>
-          <div class="groups" id="groups"></div>
-          <a class="dock" id="dock" href="#p-sua-lista"></a>
+      <form class="panel diag" id="diag" name="diagnostico" method="POST" action="/obrigada" data-netlify="true" netlify-honeypot="campo-extra" novalidate>
+        <input type="hidden" name="form-name" value="diagnostico">
+        <input type="hidden" name="subject" id="dgAssunto" value="[Site] Diagnóstico">
+        <input type="hidden" name="gargalos" id="dgGargalos">
+        <input type="hidden" name="frentes" id="dgFrentes">
+        <input type="hidden" name="formato" id="dgFormato">
+        <p hidden><label>Não preencha: <input name="campo-extra"></label></p>
+        <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="name">diagnostico.form</span><button type="button" class="mini" id="dgLimpa">Limpar</button></div>
+        <div class="groups">
+          <fieldset class="dg-passo">
+            <legend class="group-head"><span class="tier">Passo 1</span><h3>Qual é o maior gargalo da sua empresa hoje?</h3><span class="dg-dica">marque o que fizer sentido</span></legend>
+            <div class="opts dg-col" data-campo="gargalos">
+              <button type="button" class="opt" aria-pressed="false" data-v="Atrasos e entregas perdidas"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Atrasos e entregas perdidas:</b> a equipe perde prazos, as tarefas ficam sem dono e ninguém sabe o que é prioridade.</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Bagunça nos processos"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Bagunça nos processos:</b> falta um fluxo claro de trabalho e um lugar centralizado para organizar a rotina do dia a dia.</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Falta de orientação criativa"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Falta de orientação criativa:</b> o time de criação/design entrega refações porque o briefing não foi claro ou faltou direcionamento.</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Improviso nos shootings e produções"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Improviso nos shootings e produções:</b> dificuldade para organizar captações de foto/vídeo, alinhar referências e alinhar fornecedores.</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Redes sociais no susto"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Redes sociais no susto:</b> publicações feitas em cima da hora, sem planejamento de calendário, sem revisão de texto e sem acompanhar resultados.</span></button>
+            </div>
+          </fieldset>
+          <fieldset class="dg-passo">
+            <legend class="group-head"><span class="tier">Passo 2</span><h3>Em quais frentes você precisa da minha ajuda?</h3></legend>
+            <div class="dg-frentes" data-campo="frentes">
+              <div><h4>1. Organização de projetos e rotina</h4><div class="opts dg-col">
+                <button type="button" class="opt" aria-pressed="false" data-v="Planejamento de campanhas, cronogramas e organização da equipe"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Planejamento de campanhas, montagem de cronogramas e organização da equipe.</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Padronizar o passo a passo das demandas"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Criar e padronizar o passo a passo das demandas (do pedido até a entrega final).</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Espaço de trabalho no Notion do zero"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Montar do zero um espaço de trabalho no Notion para concentrar toda a operação.</span></button>
+              </div></div>
+              <div><h4>2. Coordenação de produção criativa</h4><div class="opts dg-col">
+                <button type="button" class="opt" aria-pressed="false" data-v="Briefings alinhados com direção de estilo"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Escrever briefings bem alinhados, com direção de estilo e foco no resultado.</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Organizar e acompanhar shootings"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Organizar e acompanhar produções de fotos e vídeos (shootings).</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Coordenar o time de criação e aprovar materiais"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Coordenar o time de criação (designers, fotógrafos, redatores) e aprovar os materiais finais.</span></button>
+              </div></div>
+              <div><h4>3. Conteúdo para redes sociais</h4><div class="opts dg-col">
+                <button type="button" class="opt" aria-pressed="false" data-v="Calendário de postagens e rotina de conteúdo"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Planejar o calendário de postagens e organizar a rotina de produção de conteúdo.</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Revisão de textos na linguagem da marca"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Revisar textos para garantir que falem na linguagem certa da sua marca.</span></button>
+                <button type="button" class="opt" aria-pressed="false" data-v="Arquivos de mídia, postagens e números do mês"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span>Organizar arquivos de mídias, acompanhar postagens e avaliar os números do mês.</span></button>
+              </div></div>
+            </div>
+          </fieldset>
+          <fieldset class="dg-passo">
+            <legend class="group-head"><span class="tier">Passo 3</span><h3>Qual é o formato de parceria ideal no momento?</h3><span class="dg-dica">escolha um</span></legend>
+            <div class="opts dg-col" data-campo="formato" data-unico="1">
+              <button type="button" class="opt dg-radio" aria-pressed="false" data-v="Projeto pontual para arrumar a casa"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Projeto pontual para arrumar a casa:</b> quero organizar a operação, criar os fluxos e deixar tudo pronto no Notion para a minha equipe tocar.</span></button>
+              <button type="button" class="opt dg-radio" aria-pressed="false" data-v="Acompanhamento contínuo"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span><b>Acompanhamento contínuo:</b> preciso da Manu no dia a dia, tocando a gestão dos projetos, a equipe criativa e as produções de forma recorrente.</span></button>
+            </div>
+          </fieldset>
+          <fieldset class="dg-passo">
+            <legend class="group-head"><span class="tier">Por fim</span><h3>Conte um pouco sobre o seu momento</h3></legend>
+            <label class="dg-campo"><span>O que mais eu preciso saber sobre o seu negócio ou sobre as dificuldades que você vem enfrentando na rotina?</span><textarea name="momento" rows="5"></textarea></label>
+            <div class="dg-linha">
+              <label class="dg-campo"><span>Seu nome</span><input name="nome" id="dgNome" autocomplete="name" required></label>
+              <label class="dg-campo"><span>WhatsApp ou e-mail para eu te responder</span><input name="contato" id="dgContato" autocomplete="email" required></label>
+            </div>
+            <div class="dg-envio"><button type="submit" class="btn" id="dgEnvia">Enviar diagnóstico <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button><p class="dg-nota" id="dgNota" aria-live="polite"></p></div>
+          </fieldset>
         </div>
-        <aside class="panel sum" id="p-sua-lista" aria-live="polite">
-          <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="name">sua-lista</span></div>
-          <div class="sum-body" id="sum"></div>
-        </aside>
+      </form>
+
+      <div class="sec-head dg-inv">
+        <h2 class="display">Entenda as <em>possibilidades de investimento</em></h2>
+        <p>Os valores finais são ajustados de acordo com o volume e a complexidade das demandas da sua empresa. Preencha o diagnóstico acima para receber um orçamento exato.</p>
+      </div>
+      <div class="packs">
+        <article class="pack">
+          <span class="pname">Básico</span>
+          <span class="what">Ideal para empresas que precisam organizar os processos internos, criar padrões e concentrar o trabalho em um só lugar.</span>
+          <ul class="pk-lista"><li>Criação do seu espaço de trabalho customizado no Notion.</li><li>Organização do Google Drive, bancos de mídias e arquivos de projetos.</li><li>Mapeamento e desenho do fluxo de trabalho ideal para a sua rotina.</li><li>Padronização das etapas de produção e regras de aprovação de materiais.</li><li>Modelos de briefings claros para direcionar a equipe sem margem para dúvidas.</li></ul>
+          <span class="price">a partir de <b>R$ 2.500</b><small>projeto único de estruturação</small></span>
+        </article>
+        <article class="pack">
+          <span class="pname">Intermediário</span>
+          <span class="what">Inclui a estruturação do pacote Básico + acompanhamento direto da rotina e da equipe criativa.</span>
+          <ul class="pk-lista"><li>Planejamento de campanhas, gestão de projetos, cronogramas e acompanhamento diário de entregas.</li><li>Cobrança amigável de prazos para evitar atrasos na operação.</li><li>Criação de briefings completos e direcionamento visual das demandas criativas.</li><li>Coordenação direta de profissionais (designers, redatores, fotógrafos e videomakers).</li><li>Organização completa e acompanhamento de shootings (fotos/vídeos).</li><li>Revisão detalhada e aprovação de materiais.</li><li>Relatórios simples de acompanhamento de projetos e pesquisas de referências de mercado.</li></ul>
+          <span class="price">a partir de <b>R$ 3.500</b><small>por mês</small></span>
+        </article>
+        <article class="pack">
+          <span class="pname">Premium</span>
+          <span class="what">Inclui os pacotes Básico + Intermediário + gestão de conteúdo continuada e visão 360° do negócio.</span>
+          <ul class="pk-lista"><li>Planejamento do calendário editorial e estratégia de conteúdo para redes sociais.</li><li>Organização total da rotina de produção de posts e vídeos.</li><li>Revisão de textos para manter o tom de voz e a personalidade da marca.</li><li>Acompanhamento mensal das métricas e resultados do conteúdo.</li><li>Reuniões semanais de alinhamento com a equipe para definir prioridades.</li><li>Recepção e adaptação operacional de novos projetos ou clientes da agência.</li><li>Acompanhamento próximo para ajustes rápidos de rota e demandas prioritárias.</li></ul>
+          <span class="price">a partir de <b>R$ 5.500</b><small>por mês</small></span>
+        </article>
       </div>
     </div>
   </section>
@@ -1690,10 +1794,10 @@ body.is-prop{background:#FFF6E4}
     <div class="wrap">
       <h2 class="display">Como <em>funciona?</em></h2>
       <ol class="steps">
-        <li><span class="n">Passo 1</span><h3>Reunião inicial</h3><p>Assinatura do contrato + preenchimento de forms. Reunião para definição de prioridades, tarefas, prazos e ferramentas de trabalho.</p></li>
-        <li><span class="n">Passo 2</span><h3>Planejamento</h3><p>“Ambientação” para introdução na rotina do negócio.</p></li>
-        <li><span class="n">Passo 3</span><h3>Execução</h3><p>Entregas realizadas de forma remota, com acompanhamento constante. Inclui checklist diário a depender da demanda.</p></li>
-        <li><span class="n">Passo 4</span><h3>Relatórios</h3><p>Call de acompanhamento semanal (30min) + envio de relatórios quinzenais sobre as atividades realizadas.</p></li>
+        <li><span class="n">Passo 1</span><h3>Reunião inicial</h3><p>Assinatura de contrato + mapeamento inicial e alinhamento de prioridades.</p></li>
+        <li><span class="n">Passo 2</span><h3>Planejamento</h3><p>Kick off: acesso às ferramentas + “ambientação” para introdução na rotina do negócio ou projetos específicos.</p></li>
+        <li><span class="n">Passo 3</span><h3>Execução</h3><p>Entregas realizadas de forma remota, com acompanhamento constante. Inclui checklist diário a depender da demanda/projeto.</p></li>
+        <li><span class="n">Passo 4</span><h3>Avaliação</h3><p>Reuniões semanais de acompanhamento (30min), apresentação de relatórios quinzenais de progresso e ajustes necessários.</p></li>
       </ol>
     </div>
   </section>
@@ -1762,7 +1866,7 @@ body.is-prop{background:#FFF6E4}
     </div>
     <div class="foot">
       <div class="sig"><span class="av"><img src="img/avatar.png" alt="" width="42" height="42"></span><b class="so">Manu Justel</b><span class="assin" aria-hidden="true"></span></div>
-      <span>Assistente Virtual · Especialista em marketing e negócios · 2026 · <a href="/privacidade" style="color:inherit">privacidade</a></span>
+      <span>Marketing · Gestão de projetos · Coordenação de produção criativa · 2026 · <a href="/privacidade" style="color:inherit">privacidade</a></span>
     </div>
   </div>
 </footer>
@@ -1867,79 +1971,38 @@ window.__iniciaProposta=function(){
   });
   stage.addEventListener('pointerleave', function(){ you.hidden = true; });
 
-  /* ---------- serviços: monte sua lista ---------- */
-  var PACK = {
-    1:{ name:'Básico', price:'R$ 1.500', what:'Documentos, e-mails e agenda.', inc:'' },
-    2:{ name:'Intermediário', price:'R$ 2.500', what:'Pacote básico + suporte a projetos, pesquisas e relatórios.', inc:'Já vem com tudo do pacote Básico.' },
-    3:{ name:'Premium', price:'R$ 3.500', what:'Básico + Intermediário + redes sociais e suporte de atendimento.', inc:'Já vem com tudo do Básico e do Intermediário. Inclui atendimento prioritário para demandas emergenciais.' }
-  };
-  var GROUPS = [
-    { t:1, name:'Organização de documentos', items:['Organização de Google Drive','Organização e padronização de arquivos gerais','Atualização de contratos, notas e documentos','Criação e atualização de planilhas','Gestão de materiais criativos'] },
-    { t:1, name:'Gestão de e-mails', items:['Triagem diária da caixa de entrada','Respostas de e-mails de rotina','Criação de copys de e-mail para situações recorrentes','Alteração e envio de propostas','Follow-up com clientes, fornecedores e parceiros'] },
-    { t:1, name:'Gestão de agenda', items:['Marcação, confirmação e cancelamento de reuniões','Envio de lembretes','Bloqueio de horários estratégicos','Controle de datas importantes'] },
-    { t:2, name:'Suporte a projetos', items:['Criação e atualização de tarefas','Acompanhamento de prazos e alertas de entrega','Atas de reunião','Controle de status de campanhas e entregas por cliente','Suporte ao time criativo: briefings formatados, revisão de prazos, controle de aprovações'] },
-    { t:2, name:'Pesquisas e confecção de relatórios', items:['Pesquisa de referências, concorrentes','Compilação de dados de performance de campanhas em relatórios editáveis','Pesquisa de fornecedores, ferramentas e orçamentos','Relatórios de acompanhamento de projetos para apresentação ao cliente','Curadoria de conteúdo e tendências de mercado para o time criativo'] },
-    { t:3, name:'Gestão de redes sociais', items:['Criação e gestão do calendário editorial da agência','Agendamento de publicações','Interação básica: resposta de comentários e DMs de baixa complexidade','Compilação de métricas mensais de engajamento','Apoio à produção de briefings de conteúdo para o time criativo'] },
-    { t:3, name:'Suporte de atendimento', items:['Onboarding de novos clientes da agência','Atendimento individual/grupos via WhatsApp'] }
-  ];
-  var picked = {};
-  ['1-0','2-0','0-3'].forEach(function(k){ picked[k] = true; });
-  var example = true;
-  var packsEl = document.getElementById('packs'), groupsEl = document.getElementById('groups'), sumEl = document.getElementById('sum');
-
-  packsEl.innerHTML = [1,2,3].map(function(t){
-    var p = PACK[t];
-    return '<button type="button" class="pack" id="pack-' + t + '" data-pack="' + t + '" aria-pressed="false"><span class="pname">' + p.name + '</span><span class="price">a partir de <b>' + p.price + '</b> mensal</span><span class="what">' + p.what + '</span><span class="hint">marcar tudo deste pacote</span></button>';
-  }).join('');
-  groupsEl.innerHTML = GROUPS.map(function(g, gi){
-    return '<div><div class="group-head"><h3>' + g.name + '</h3><span class="tier">' + PACK[g.t].name + '</span></div><div class="opts">' +
-      g.items.map(function(label, ii){ return '<button type="button" class="opt" id="opt-' + gi + '-' + ii + '" data-k="' + gi + '-' + ii + '" aria-pressed="false"><i>' + CHECK + '</i><span>' + label + '</span></button>'; }).join('') + '</div></div>';
-  }).join('');
-
-  function chosen(){
-    var out = [];
-    GROUPS.forEach(function(g, gi){ g.items.forEach(function(label, ii){ if (picked[gi + '-' + ii]) out.push({ g: g, gi: gi, label: label }); }); });
-    return out;
-  }
-  function render(){
-    var list = chosen(), tier = 0, per = {};
-    list.forEach(function(c){ tier = Math.max(tier, c.g.t); per[c.g.name] = (per[c.g.name] || 0) + 1; });
-    Array.prototype.forEach.call(groupsEl.querySelectorAll('.opt'), function(b){ b.setAttribute('aria-pressed', picked[b.dataset.k] ? 'true' : 'false'); });
-    Array.prototype.forEach.call(packsEl.querySelectorAll('.pack'), function(b){ b.setAttribute('aria-pressed', Number(b.dataset.pack) === tier ? 'true' : 'false'); });
-    var html = '';
-    if (!list.length) {
-      html += '<p class="sum-count">Nada marcado ainda. Toque nas tarefas ao lado ou escolha um pacote acima.</p>';
-      html += '<a class="btn" href="https://wa.me/5516981351074" target="_blank" rel="noopener">Chamar no WhatsApp</a>';
-    } else {
-      var p = PACK[tier];
-      html += '<p class="sum-count">' + (example ? 'Deixei três tarefas marcadas de exemplo. Troque pelas suas. ' : '') + '<strong>' + list.length + (list.length === 1 ? ' tarefa marcada' : ' tarefas marcadas') + '</strong></p>';
-      html += '<ul class="sum-list">' + Object.keys(per).map(function(n){ return '<li><span>' + n + '</span><span>' + per[n] + '</span></li>'; }).join('') + '</ul>';
-      html += '<div class="fit"><span class="k">Isso cabe no pacote</span><span class="v">' + p.name + '</span><span class="p">a partir de <b>' + p.price + '</b> mensal</span>' + (p.inc ? '<span class="inc">' + p.inc + '</span>' : '') + '</div>';
-      var msg = 'Oi, Manu! Vi seu site e quero tirar isso da minha lista:\n' + list.map(function(c){ return '- ' + c.label; }).join('\n') + '\nPelo que vi, cabe no pacote ' + p.name + '.';
-      html += '<a class="btn" href="https://wa.me/5516981351074?text=' + encodeURIComponent(msg) + '" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>';
-    }
-    html += '<div class="custom"><span><strong>Personalizado.</strong> Escolha os serviços que melhor te atendem e receba um orçamento exclusivo para sua necessidade. Solicite via e-mail:</span><span class="copyrow"><code>justelmanu@gmail.com</code><button type="button" class="linkbtn" data-copy="justelmanu@gmail.com">Copiar</button></span></div>';
-    html += '<p class="fine">*Valores podem variar conforme personalização e complexidade do serviço.</p>';
-    sumEl.innerHTML = html;
-    document.getElementById('dock').innerHTML = list.length
-      ? '<span><b>' + list.length + '</b> ' + (list.length === 1 ? 'marcada' : 'marcadas') + ' · pacote <b>' + PACK[tier].name + '</b> · a partir de ' + PACK[tier].price + '</span><span>Ver resumo</span>'
-      : '<span>Nada marcado ainda</span><span>Ver resumo</span>';
-  }
-  groupsEl.addEventListener('click', function(e){
-    var b = e.target.closest('.opt'); if (!b) return;
-    example = false;
-    if (picked[b.dataset.k]) delete picked[b.dataset.k]; else picked[b.dataset.k] = true;
-    render();
-  });
-  packsEl.addEventListener('click', function(e){
-    var b = e.target.closest('.pack'); if (!b) return;
-    var t = Number(b.dataset.pack);
-    example = false; picked = {};
-    GROUPS.forEach(function(g, gi){ if (g.t <= t) g.items.forEach(function(_, ii){ picked[gi + '-' + ii] = true; }); });
-    render();
-  });
-  document.getElementById('clear').addEventListener('click', function(){ example = false; picked = {}; render(); });
-  render();
+    /* ---------- diagnóstico: marca as opções e envia pelo Netlify Forms ---------- */
+  (function(){
+    var f = document.getElementById('diag'); if (!f) return;
+    var nota = document.getElementById('dgNota'), bt = document.getElementById('dgEnvia');
+    f.addEventListener('click', function(e){
+      var b = e.target.closest('.opt'); if (!b || !f.contains(b)) return;
+      var grupo = b.closest('[data-unico]');
+      if (grupo) Array.prototype.forEach.call(grupo.querySelectorAll('.opt'), function(o){ if (o !== b) o.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    });
+    document.getElementById('dgLimpa').addEventListener('click', function(){ Array.prototype.forEach.call(f.querySelectorAll('.opt'), function(o){ o.setAttribute('aria-pressed', 'false'); }); f.reset(); nota.textContent = ''; });
+    function marcados(campo){ return Array.prototype.map.call(f.querySelectorAll('[data-campo="' + campo + '"] .opt[aria-pressed="true"]'), function(o){ return o.dataset.v; }); }
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nome = f.nome.value.trim(), contato = f.contato.value.trim();
+      if (!nome || !contato) { nota.textContent = 'Preencha seu nome e um WhatsApp ou e-mail para eu te responder.'; (nome ? f.contato : f.nome).focus(); return; }
+      document.getElementById('dgGargalos').value = marcados('gargalos').join('; ');
+      document.getElementById('dgFrentes').value = marcados('frentes').join('; ');
+      document.getElementById('dgFormato').value = marcados('formato').join('; ');
+      document.getElementById('dgAssunto').value = '[Site] Diagnóstico | ' + nome;
+      bt.disabled = true; nota.textContent = 'Enviando…';
+      var corpo = new URLSearchParams(new FormData(f)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: corpo }).then(function(r){
+        if (!r.ok) throw r.status;
+        nota.textContent = 'Diagnóstico enviado! A Manu te responde em breve com um orçamento.';
+        Array.prototype.forEach.call(f.querySelectorAll('.opt'), function(o){ o.setAttribute('aria-pressed', 'false'); }); f.reset();
+      }).catch(function(){
+        var txt = 'Diagnóstico de ' + nome + ' (' + contato + ')\nGargalos: ' + document.getElementById('dgGargalos').value + '\nFrentes: ' + document.getElementById('dgFrentes').value + '\nFormato: ' + document.getElementById('dgFormato').value + '\n\n' + f.momento.value;
+        nota.innerHTML = 'Não consegui enviar daqui. <a href="mailto:justelmanu@gmail.com?subject=' + encodeURIComponent('Diagnóstico | ' + nome) + '&body=' + encodeURIComponent(txt) + '">Mandar por e-mail</a>';
+      }).then(function(){ bt.disabled = false; });
+    });
+  })();
 
   /* ---------- benefícios: a lista vai sendo marcada ---------- */
   var checks = Array.prototype.slice.call(document.querySelectorAll('#checks li'));
